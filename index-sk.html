@@ -13,6 +13,25 @@
  
 <style>
 
+.screenshot {
+  background: #fafafa;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.screenshot img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.screenshot p {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+ 
 .container {
   max-width: 900px;
   margin: 40px auto;
@@ -146,14 +165,34 @@ detect unexpected modifications.
 
 <h2>Example audit log</h2>
 
-<p><strong>Baseline created after inserting the Excel file.</strong></p>
-<img src="excel-audit-baseline-created.png" alt="ExcelAudit baseline created after inserting an Excel file">
+<div class="screenshot">
 
-<p><strong>Detected changes recorded in the audit log.</strong></p>
-<img src="excel-audit-log-example.png" alt="Excel audit log showing detected changes between spreadsheet versions">
+<p>Baseline created after inserting the Excel file</p>
 
-<p><strong>Detection of audit log integrity violation.</strong></p>
-<img src="excel-audit-log-integrity-violation.png" alt="ExcelAudit detecting violation of audit log integrity">
+<img src="excel-audit-baseline-created.png"
+alt="ExcelAudit baseline created after inserting an Excel file">
+
+</div>
+
+
+<div class="screenshot">
+
+<p>Detected changes recorded in the audit log</p>
+
+<img src="excel-audit-log-example.png"
+alt="Excel audit log showing detected changes between spreadsheet versions">
+
+</div>
+
+
+<div class="screenshot">
+
+<p>Detection of audit log integrity violation</p>
+
+<img src="excel-audit-log-integrity-violation.png"
+alt="ExcelAudit detecting violation of audit log integrity">
+
+</div>
 
 <hr>
   
