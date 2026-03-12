@@ -10,6 +10,14 @@
  
 <style>
 
+ul {
+  margin-top: 10px;
+}
+
+li {
+  margin: 6px 0;
+}
+ 
 body {
   font-family: Arial, sans-serif;
   max-width: 900px;
@@ -81,34 +89,27 @@ The demo runs locally and does not require installation.
 </div>
   
 <p>
-ExcelAudit compares two Excel files and detects changed cells
-between spreadsheet versions.
+ExcelAudit compares Excel files and records every change in an audit log.
+Each modification includes timestamp, row, column, old value and new value.
 </p>
 
-<p>
-The tool identifies timestamp, row, column, old value and new value
-for every change.
-</p>
+<h2>What ExcelAudit does</h2>
 
-<p>
-All changes are written to an audit log protected by a hash chain,
-so tampering with records can be detected.
-</p>
-
+<ul>
+<li>Compares Excel files and detects changed cells</li>
+<li>Creates automatic backups of spreadsheet versions</li>
+<li>Records every change in a tamper-evident audit log</li>
+</ul>
+ 
 <h2>How to compare Excel files</h2>
-  
+
 <p>
 Comparing Excel files manually can be difficult when spreadsheets contain many rows and columns.
-ExcelAudit automatically compares two Excel files and detects changed cells between versions.
+ExcelAudit automatically compares two Excel files and highlights every modified cell.
 </p>
 
 <p>
-Each change is logged with timestamp, row, column, old value and new value.
-</p>
-
-<p>
-ExcelAudit automatically creates backups of the Excel file each time changes are detected.
-This allows you to keep a history of spreadsheet versions and review what changed between them.
+All detected changes are recorded in the audit log so you can review what changed between spreadsheet versions.
 </p>
   
 <h2>Why compare Excel files</h2>
@@ -128,11 +129,9 @@ detect unexpected modifications.
 <h2>Example audit log</h2>
 
 <p>
-ExcelAudit detects changes between Excel file versions and records them in an audit log.
-The log contains timestamp, row, column, old value and new value for each detected change.
-</p>  
-
-<p>Examples of ExcelAudit detecting spreadsheet changes and integrity violations:</p>
+ExcelAudit records detected spreadsheet changes in an audit log.
+The screenshots below show examples of detected changes and integrity verification.
+</p>
 
 <p><strong>Baseline created after inserting the Excel file.</strong></p>
 <img src="excel-audit-baseline-created.png" alt="ExcelAudit baseline created after inserting an Excel file">
@@ -148,6 +147,12 @@ The log contains timestamp, row, column, old value and new value for each detect
 <p>
 ExcelAudit is a simple tool that compares Excel files and records detected changes in an audit log.
 </p>
-  
+
+<hr>
+
+<p style="text-align:center; font-size:13px; color:#777;">
+© 2026 Robert Krecmer – ExcelAudit
+</p>
+ 
 </body>
 </html>
