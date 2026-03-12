@@ -3,6 +3,23 @@
 
 <head>
 
+<style>
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 700px;
+  display: block;
+  margin: 30px auto;
+  border: 1px solid #ddd;
+}
+</style>  
+  
 <meta charset="UTF-8">
 
 <title>Compare Excel Files – Detect Changed Cells | ExcelAudit</title>
@@ -74,19 +91,12 @@ The log contains timestamp, row, column, old value and new value for each detect
 <p>Examples of ExcelAudit detecting spreadsheet changes and integrity violations:</p>
 
 <p>Baseline created after inserting the Excel file.</p>
-
 <img src="excel-audit-baseline-created.png" width="700">
 
-<br><br>
-
 <p>Detected changes recorded in the audit log.</p>
-
 <img src="excel-audit-log-example.png" width="700">
 
-<br><br>
-
 <p>Detection of audit log integrity violation.</p>
-
 <img src="excel-audit-log-integrity-violation.png" width="700"> 
 
 <p>
