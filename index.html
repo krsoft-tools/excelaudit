@@ -34,6 +34,25 @@ All changes are written to an audit log protected by a hash chain,
 so tampering with records can be detected.
 </p>
 
+<h2>How to compare Excel files</h2>
+
+<p>
+Comparing Excel files manually can be difficult when spreadsheets contain many rows and columns.
+ExcelAudit automatically compares two Excel files and detects changed cells between versions.
+</p>
+
+<p>
+Each change is logged with timestamp, row, column, old value and new value.
+</p>
+
+<h2>Example audit log</h2>
+
+<pre>
+timestamp,row,column,old_value,new_value
+2026-03-11 14:22:01,12,B,12500,13800
+2026-03-11 14:23:10,18,D,Approved,Rejected
+</pre>  
+
 </body>
 
 </html>
