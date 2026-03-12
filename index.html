@@ -35,7 +35,7 @@ so tampering with records can be detected.
 </p>
 
 <h2>How to compare Excel files</h2>
-
+  
 <p>
 Comparing Excel files manually can be difficult when spreadsheets contain many rows and columns.
 ExcelAudit automatically compares two Excel files and detects changed cells between versions.
@@ -43,6 +43,11 @@ ExcelAudit automatically compares two Excel files and detects changed cells betw
 
 <p>
 Each change is logged with timestamp, row, column, old value and new value.
+</p>
+
+<p>
+ExcelAudit automatically creates backups of the Excel file each time changes are detected.
+This allows you to keep a history of spreadsheet versions and review what changed between them.
 </p>
   
 <h2>Why compare Excel files</h2>
@@ -61,12 +66,23 @@ detect unexpected modifications.
 
 <h2>Example audit log</h2>
 
-<pre>
-timestamp,row,column,old_value,new_value
-2026-03-11 14:22:01,12,B,12500,13800
-2026-03-11 14:23:10,18,D,Approved,Rejected
-</pre>  
+<p>
+ExcelAudit detects changes between Excel file versions and records them in an audit log.
+The log contains timestamp, row, column, old value and new value for each detected change.
+</p>  
 
+<p>Examples of ExcelAudit detecting spreadsheet changes and integrity violations:</p>
+
+<img src="excel-audit-baseline-created.png" alt="ExcelAudit baseline created after inserting Excel file">
+
+<img src="excel-audit-log-example.png" alt="Excel audit log showing detected changes between spreadsheet versions">
+
+<img src="excel-audit-log-integrity-violation.png" alt="ExcelAudit detecting violation of audit log integrity">  
+
+<p>
+ExcelAudit is a simple tool that compares Excel files and records detected changes in an audit log.
+</p>
+  
 </body>
 
 </html>
