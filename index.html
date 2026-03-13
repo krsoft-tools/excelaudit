@@ -15,6 +15,26 @@
  
 <style>
 
+.lang-switch {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.lang-switch a {
+  display: inline-block;
+  padding: 4px 10px;
+  margin-left: 6px;
+  border-radius: 4px;
+  background: #eee;
+  text-decoration: none;
+  font-size: 13px;
+  color: #333;
+}
+
+.lang-switch a:hover {
+  background: #ddd;
+}
+ 
 .hero {
   background: linear-gradient(180deg, #f7f9fc, #ffffff);
   padding: 40px 20px;
@@ -105,9 +125,10 @@ h2 {
   
 <body>
 
-<p style="text-align:right; font-size:14px;">
-<a href="index.html">English</a> | <a href="index-sk.html">Slovensky</a>
-</p>
+<div class="lang-switch">
+<a href="index.html">EN</a>
+<a href="index-sk.html">SK</a>
+</div>
  
 <div class="container">
  
