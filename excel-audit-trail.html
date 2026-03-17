@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>Excel Audit Trail – Track Spreadsheet Changes | ExcelAudit</title>
+
+<meta name="description" content="Create a tamper-evident audit trail for Excel files. Track every cell change and detect spreadsheet modifications with ExcelAudit.">
+
+<link rel="alternate" hreflang="en" href="https://krsoft-tools.github.io/excelaudit/excel-audit-trail.html">
+<link rel="alternate" hreflang="sk" href="https://krsoft-tools.github.io/excelaudit/excel-audit-trail-sk.html">
+
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 22px;
+  margin: 10px;
+  background-color: #2e7d32;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #1b5e20;
+}
+
+.screenshot {
+  margin: 40px 0;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>Excel Audit Trail Tool</h1>
+
+<p>
+Track every change in Excel files and create a tamper-evident audit trail.
+</p>
+
+<h2>Download demo</h2>
+
+<a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit_1.4.4_MacOS_Portable_Demo_EN.zip">
+MacOS demo</a>
+
+<a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit_1.4.4_Windows_Portable_Demo_EN.zip">
+Windows demo</a>
+
+<p style="font-size:14px; color:#666;">
+Runs locally. No installation. No cloud.
+</p>
+
+</div>
+
+<p>
+Excel does not provide a reliable audit trail of cell-level changes.  
+Tracking what exactly changed in a spreadsheet can be difficult, especially when working with critical data.
+</p>
+
+<h2>What ExcelAudit does</h2>
+
+<p>
+ExcelAudit records every cell change and creates a tamper-evident audit log.  
+Each change is stored together with a cryptographic hash, making any manipulation detectable.
+</p>
+
+<h2>Use cases</h2>
+
+<ul>
+<li>Internal audit of spreadsheets</li>
+<li>Tracking changes in financial files</li>
+<li>Spreadsheet data integrity verification</li>
+<li>Detecting unauthorized modifications</li>
+</ul>
+
+<div class="screenshot">
+
+<p>Baseline created after inserting the Excel file</p>
+
+<img src="excel-audit-baseline-created.png">
+
+</div>
+
+<div class="screenshot">
+
+<p>Detected changes recorded in the audit log</p>
+
+<img src="excel-audit-log-example.png">
+
+</div>
+
+<div class="screenshot">
+
+<p>Detection of audit log integrity violation</p>
+
+<img src="excel-audit-log-integrity-violation.png">
+
+</div>
+
+<hr>
+
+<p style="text-align:center; font-size:13px; color:#777;">
+© 2026 Robert Krecmer – ExcelAudit
+</p>
+
+</div>
+
+</body>
+</html>
