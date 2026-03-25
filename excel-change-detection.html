@@ -5,8 +5,12 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
-<title>Detect Changes in Excel Files – See What Data Was Modified</title>
-<meta name="description" content="Detect changes in Excel files and identify modified data accurately. ExcelAudit helps you track data changes without macros.">  
+<title>Detect Changes in Excel – Find Modified Cells and Spreadsheet Differences</title>
+
+<meta name="description" content="Detect changes in Excel files and identify modified cells, old and new values, and spreadsheet differences without manual review.">
+
+<link rel="alternate" hreflang="en" href="https://krsoft-tools.github.io/excelaudit/excel-change-detection.html">
+<link rel="alternate" hreflang="sk" href="https://krsoft-tools.github.io/excelaudit/excel-change-detection-sk.html">
 
 <style>
 
@@ -27,25 +31,8 @@ body {
 }
 
 .hero {
-  background: linear-gradient(180deg, #f7f9fc, #ffffff);
-  padding: 40px 20px;
-  border-radius: 8px;
-  margin-bottom: 30px;
   text-align: center;
-}
-
-.screenshot {
-  background: #fafafa;
-  border: 1px solid #e3e3e3;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 40px 0;
-  text-align: center;
-}
-
-.screenshot img {
-  max-width: 100%;
-  border-radius: 4px;
+  margin-bottom: 40px;
 }
 
 .button {
@@ -63,6 +50,36 @@ body {
   background-color: #1b5e20;
 }
 
+.screenshot {
+  margin: 40px 0;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.link-box {
+  background: #f7f9fc;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.link-box a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #2e7d32;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.link-box a:hover {
+  text-decoration: underline;
+}
+
 </style>
 
 </head>
@@ -73,52 +90,97 @@ body {
 
 <div class="hero">
 
-<h1>Detect changes in Excel files accurately</h1>
+<h1>Detect Changes in Excel</h1>
 
-<p><strong>See exactly what changed in your Excel data and keep proof of every modification.</strong></p>  
+<p><strong>Find modified cells and quickly see what changed in your spreadsheet data.</strong></p>
   
-<p style="font-size:18px; color:#555;">
-Excel does not provide a reliable way to track what data has changed.
-Changes can be overwritten without any clear record.
+<p>
+ExcelAudit helps you detect spreadsheet changes without manually checking formulas, values, or entire worksheets line by line.
 </p>
 
-<a class="button" href="index.html">Download Demo</a>
+<h2>Download demo</h2>
+
+<a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit_1.4.4_MacOS_Portable_Demo_EN.zip">
+MacOS demo</a>
+
+<a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit_1.4.4_Windows_Portable_Demo_EN.zip">
+Windows demo</a>
+
+<p style="font-size:14px; color:#666;">
+Runs locally. No installation. No cloud.
+</p>
 
 </div>
 
-<h2>Why this matters</h2>
+<p>
+Detecting changes in Excel can be difficult when files are updated repeatedly or reviewed by multiple people. Even small spreadsheet edits can affect totals, formulas, reports, or business decisions without being easy to notice.
+</p>
+
+<h2>Why Manual Excel Review Often Fails</h2>
 
 <p>
-Without visibility into data changes, you risk:
+Manually comparing spreadsheet versions is slow and unreliable, especially in larger workbooks. Important cell changes can be missed, hidden among hundreds or thousands of values, formulas, or tabs.
+</p>
+
+<p>
+ExcelAudit helps you identify differences faster by focusing directly on changed spreadsheet content.
+</p>
+
+<h2>What ExcelAudit Detects</h2>
+
+<p>
+ExcelAudit detects modifications between spreadsheet states and helps you review the actual data changes instead of searching for them manually.
 </p>
 
 <ul>
-<li>Incorrect reports</li>
-<li>Undetected data errors</li>
-<li>Loss of trust in your data</li>
+<li>Changed cell values</li>
+<li>Previous and new values</li>
+<li>Differences between spreadsheet versions</li>
+<li>Modified worksheet content</li>
 </ul>
 
-<h2>Solution</h2>
+<h2>When Excel Change Detection Is Useful</h2>
 
-<p>
-ExcelAudit detects and records all changes in Excel files,
-allowing you to see exactly what was modified.
-</p>
+<ul>
+<li>Reviewing updated business spreadsheets</li>
+<li>Checking data after external edits</li>
+<li>Verifying changes before approval</li>
+<li>Finding unexpected spreadsheet modifications</li>
+</ul>
 
 <div class="screenshot">
 
 <p>Detected changes recorded in the audit log</p>
 
-<img src="excel-audit-log-example.png"
-alt="Excel audit log showing detected changes between spreadsheet versions">
+<img src="excel-audit-log-example.png" alt="Detected Excel spreadsheet changes with old and new values">
 
 </div>
 
-<div style="text-align:center; margin-top:40px;">
+<div class="screenshot">
 
-<a class="button" href="index.html">Try ExcelAudit Demo</a>
+<p>Baseline created before future Excel change tracking</p>
+
+<img src="excel-audit-baseline-created.png" alt="Baseline creation for Excel change detection">
 
 </div>
+
+<h2>See Excel Changes More Clearly</h2>
+
+<p>
+Instead of reviewing spreadsheets cell by cell, ExcelAudit gives you a clearer view of what changed and where the modification occurred. This helps reduce review time and makes spreadsheet checks more reliable.
+</p>
+
+<div class="link-box">
+  <p><strong>Explore More ExcelAudit Pages</strong></p>
+  <a href="excel-audit-trail.html">Excel Audit Trail →</a><br>
+  <a href="index.html">Back to ExcelAudit overview →</a>
+</div>
+
+<hr>
+
+<p style="text-align:center; font-size:13px; color:#777;">
+© 2026 Robert Krecmer – ExcelAudit
+</p>
 
 </div>
 
