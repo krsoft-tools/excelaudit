@@ -5,9 +5,9 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
-<title>Excel Audit Trail Software – Track Spreadsheet Changes with Proof</title>
+<title>Excel Audit Trail – Detect Changes and Get Proof of Data Modifications</title>
 
-<meta name="description" content="Create a reliable Excel audit trail and keep proof of spreadsheet changes. Track modified cells, preserve change history, and detect tampering locally.">
+<meta name="description" content="Create a reliable audit trail in Excel. Detect data changes, track modifications and get proof of every update without macros.">
 
 <link rel="alternate" hreflang="en" href="https://krsoft-tools.github.io/excelaudit/excel-audit-trail.html">
 <link rel="alternate" hreflang="sk" href="https://krsoft-tools.github.io/excelaudit/excel-audit-trail-sk.html">
@@ -31,8 +31,11 @@ body {
 }
 
 .hero {
+  background: linear-gradient(180deg, #f7f9fc, #ffffff);
+  padding: 40px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
   text-align: center;
-  margin-bottom: 40px;
 }
 
 .button {
@@ -51,62 +54,35 @@ body {
 }
 
 .screenshot {
+  background: #fafafa;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 20px;
   margin: 40px 0;
   text-align: center;
 }
 
-img {
+.screenshot img {
   max-width: 100%;
+  border-radius: 4px;
+}
+
+.audit-shot img {
+  width: 100%;
+  max-width: 800px;
+  max-height: 420px;
+  object-fit: contain;
+  background: #ffffff;
   border-radius: 6px;
+  display: block;
+  margin: 0 auto;
 }
 
 .link-box {
-  background: #f7f9fc;
-  border: 1px solid #e3e3e3;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-.link-box a {
-  display: inline-block;
-  margin-top: 8px;
-  color: #2e7d32;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.link-box a:hover {
-  text-decoration: underline;
-}
-
-.related-links {
   margin-top: 50px;
   padding: 20px;
   background: #f7f9fc;
   border-radius: 8px;
-  text-align: center;
-}
-
-.related-links p {
-  margin: 0 0 15px 0;
-  font-size: 14px;
-  color: #666;
-}
-
-.related-links a {
-  display: inline-block;
-  margin: 8px 10px;
-  padding: 10px 18px;
-  background: #2e7d32;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.related-links a:hover {
-  background: #1b5e20;
 }
 
 .text-link {
@@ -118,7 +94,7 @@ img {
 .text-link:hover {
   text-decoration: underline;
 }
-  
+
 </style>
 
 </head>
@@ -129,17 +105,19 @@ img {
 
 <div class="hero">
 
-<h1>Excel Audit Trail Software</h1>
+<h1>Excel Audit Trail Tool</h1>
 
-<p><strong>Create a reliable audit trail for Excel files and keep proof of spreadsheet changes.</strong></p>
+<p><strong>See exactly what changed in your Excel data and keep proof of every modification.</strong></p>
   
-<p>
-ExcelAudit helps you preserve a trustworthy record of data modifications and detect unauthorized or unexpected spreadsheet edits.
+<p style="font-size:18px; color:#555;">
+Track every change in Excel files and create a tamper-evident audit trail.
 </p>
 
-<h2>Download demo</h2>
+<h2>Download Demo</h2>
 
-<a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit_1.4.4_MacOS_Portable_Demo_EN.zip">
+<p>Try ExcelAudit on your own Excel files.</p>
+
+<a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit.v1.4.4_MacOS_portable_DEMO.zip">
 MacOS demo</a>
 
 <a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit_1.4.4_Windows_Portable_Demo_EN.zip">
@@ -149,64 +127,21 @@ Windows demo</a>
 Runs locally. No installation. No cloud.
 </p>
 
+<p style="font-size:13px; color:#888;">
+No data leaves your device.
+</p>
+
 </div>
 
 <p>
-Excel does not provide a reliable audit trail for cell-level spreadsheet changes. Once data is overwritten, it can be difficult to prove what changed, when it changed, or whether the change history has been altered.
+Excel does not provide a reliable audit trail of cell-level changes. Tracking what exactly changed in a spreadsheet can be difficult, especially when working with critical data.
 </p>
 
-<h2>Why an Excel Audit Trail Matters</h2>
+<h2>What ExcelAudit Does</h2>
 
 <p>
-A proper audit trail helps you keep a trustworthy history of spreadsheet edits. This is especially useful when Excel files contain financial data, operational records, reconciliations, or other important business information.
+ExcelAudit records every cell change and creates a tamper-evident audit log. Each change is stored together with a cryptographic hash, making any manipulation detectable.
 </p>
-
-<p>
-Instead of relying on memory, manual checks, or weak version tracking, an audit trail gives you a clearer record of spreadsheet activity over time.
-</p>
-
-<h2>What ExcelAudit Records</h2>
-
-<p>
-ExcelAudit records cell-level modifications and stores change information in a structured audit log. This allows you to review what changed between spreadsheet versions and preserve a more reliable history of updates.
-</p>
-
-<ul>
-<li>Changed cell values</li>
-<li>Previous and new values</li>
-<li>Changes across spreadsheet versions</li>
-<li>Audit log continuity checks</li>
-</ul>
-
-<h2>How ExcelAudit Helps Protect the Audit Log</h2>
-
-<p>
-ExcelAudit uses a tamper-evident logging approach so that changes to the audit history itself can be detected. This helps reduce the risk of unnoticed manipulation and gives you stronger confidence in the stored record.
-</p>
-
-<div class="screenshot">
-
-<p>Baseline created after inserting the Excel file</p>
-
-<img src="excel-audit-baseline-created.png" alt="Baseline created for Excel audit trail tracking">
-
-</div>
-
-<div class="screenshot">
-
-<p>Detected changes recorded in the audit log</p>
-
-<img src="excel-audit-log-example.png" alt="Excel audit trail log showing detected spreadsheet changes">
-
-</div>
-
-<div class="screenshot">
-
-<p>Detection of audit log integrity violation</p>
-
-<img src="excel-audit-log-integrity-violation.png" alt="Excel audit trail integrity violation detection">
-
-</div>
 
 <h2>Typical Use Cases</h2>
 
@@ -215,8 +150,36 @@ ExcelAudit uses a tamper-evident logging approach so that changes to the audit h
 <li>Tracking changes in financial files</li>
 <li>Spreadsheet data integrity verification</li>
 <li>Detecting unauthorized modifications</li>
-<li>Maintaining a clearer history of business-critical Excel files</li>
 </ul>
+
+<div class="screenshot audit-shot">
+
+<p>Baseline created after inserting the Excel file</p>
+
+<img src="excel-audit-baseline-created.png"
+alt="ExcelAudit baseline created after inserting an Excel file">
+
+</div>
+
+<div class="screenshot audit-shot">
+
+<p>Detected changes recorded in the audit log</p>
+
+<img src="excel-audit-log-example.png"
+alt="Excel audit log showing detected changes between spreadsheet versions">
+
+</div>
+
+<div class="screenshot audit-shot">
+
+<p>Detection of audit log integrity violation</p>
+
+<img src="excel-audit-log-integrity-violation.png"
+alt="ExcelAudit detecting violation of audit log integrity">
+
+</div>
+
+<div class="link-box">
 
 <h2>Related ExcelAudit Pages</h2>
 
@@ -224,7 +187,9 @@ ExcelAudit uses a tamper-evident logging approach so that changes to the audit h
 <p><a href="excel-change-detection.html" class="text-link">Detect Changes in Excel →</a></p>
 <p><a href="excel-change-log.html" class="text-link">Excel Change Log →</a></p>
 <p><a href="spreadsheet-audit-trail.html" class="text-link">Spreadsheet Audit Trail →</a></p>
-    
+
+</div>
+
 <hr>
 
 <p style="text-align:center; font-size:13px; color:#777;">
