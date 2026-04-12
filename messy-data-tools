@@ -1,0 +1,36 @@
+# Simple tools for messy data and file problems
+
+Real use case:
+
+Client sent export where totals didn’t match.
+
+Had to manually check 1500+ rows.
+
+---
+
+## Solution
+
+Built a small local tool that:
+- compares files
+- highlights differences
+- detects inconsistencies
+
+---
+
+## Result
+
+Found the issue in minutes instead of hours.
+
+---
+
+## Notes
+
+- runs locally (no cloud)
+- built for real-world messy data
+
+---
+
+## More
+
+Custom tools: https://krsoft-tools.github.io/excelaudit/custom-tools.html
+LinkedIn: https://www.linkedin.com/in/robert-krecmer-949513400/
