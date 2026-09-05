@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>How to See Who Last Edited or Created an Excel File (Step-by-Step Guide)</title>
+  <meta name="description" content="Learn how to check who created or modified an Excel spreadsheet using built-in Windows & Excel features, plus how to generate a tamper-proof audit trail.">
+
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background-color: #f4f6f8; color: #222; margin: 0; line-height: 1.6; }
+    .container { max-width: 800px; margin: 30px auto; padding: 35px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    h1 { font-size: 28px; color: #111; }
+    h2 { font-size: 22px; color: #1b5e20; margin-top: 30px; }
+    .step-box { background: #f8f9fa; border-left: 4px solid #2e7d32; padding: 15px 20px; margin: 20px 0; }
+    .warning-box { background: #fff8e1; border-left: 4px solid #ffa000; padding: 15px 20px; margin: 20px 0; }
+    .cta-mini { background: #e8f5e9; padding: 20px; border-radius: 8px; border: 1px solid #c8e6c9; text-align: center; margin-top: 30px; }
+    .button { display: inline-block; padding: 12px 20px; background-color: #2e7d32; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 10px; }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <p><a href="index.html" style="color: #2e7d32; text-decoration: none; font-weight: bold;">← Back to ExcelAudit Home</a></p>
+
+    <h1>How to Check Who Created or Last Edited an Excel File</h1>
+    <p>If you received an Excel file and need to verify who created it or who made the last modifications, native Microsoft Excel provides a few basic built-in tools.</p>
+
+    <h2>Method 1: Check File Properties in Excel</h2>
+    <div class="step-box">
+      <ol>
+        <li>Open your Excel workbook.</li>
+        <li>Click on <strong>File</strong> in the top left menu.</li>
+        <li>Select the <strong>Info</strong> tab.</li>
+        <li>On the right side under <strong>Related People</strong>, you will see <em>Author</em> and <em>Last Modified By</em>.</li>
+      </ol>
+    </div>
+
+    <h2>Method 2: Check Windows File Metadata</h2>
+    <div class="step-box">
+      <ol>
+        <li>Right-click the Excel file in Windows File Explorer.</li>
+        <li>Select <strong>Properties</strong> and switch to the <strong>Details</strong> tab.</li>
+        <li>Look for the <strong>Origin</strong> section to see <em>Authors</em> and <em>Last saved by</em>.</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <strong>⚠️ Why Native Excel Tracking Fails for Audits:</strong>
+      <ul>
+        <li><strong>Metadata is easily forged:</strong> Anyone can change the user name in Excel options before saving.</li>
+        <li><strong>No Cell History:</strong> File properties won't tell you <em>which specific numbers or formulas</em> were modified.</li>
+        <li><strong>Track Changes gets wiped:</strong> Shared workbook history frequently corrupts or resets after closing.</li>
+      </ul>
+    </div>
+
+    <h2>The Better Solution: Automatic Cell-Level Audit Logs</h2>
+    <p>If you manage critical financial models, inventory lists, or budgets, relying on file properties is risky. You need a dedicated local change tracking tool that logs exact cell edits.</p>
+
+    <div class="cta-mini">
+      <h3>Track Excel Changes Privately with ExcelAudit</h3>
+      <p>ExcelAudit compares spreadsheet baselines, detects modified numbers, and creates tamper-proof audit trails. 100% local, no cloud, no macros.</p>
+      <a href="index.html" class="button">Try ExcelAudit Portable Demo →</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
