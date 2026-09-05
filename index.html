@@ -2,332 +2,418 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<title>Excel Audit Software for Audit Trail, Change Detection and File Comparison</title> 
-<meta name="description" content="ExcelAudit helps you track spreadsheet changes, create an audit trail, detect modified cells, and compare Excel file versions locally without macros or cloud.">  
-<meta property="og:title" content="Excel Audit Software – ExcelAudit">
- 
-<link rel="alternate" hreflang="en" href="https://krsoft-tools.github.io/excelaudit/index.html">
-<link rel="alternate" hreflang="sk" href="https://krsoft-tools.github.io/excelaudit/index-sk.html">
-<link rel="canonical" href="https://krsoft-tools.github.io/excelaudit/">
- 
-<style>
-
-.lang-switch {
-  text-align: right;
-  margin-bottom: 20px;
-}
-
-.lang-switch a {
-  display: inline-block;
-  padding: 4px 10px;
-  margin-left: 6px;
-  border-radius: 4px;
-  background: #eee;
-  text-decoration: none;
-  font-size: 13px;
-  color: #333;
-}
-
-.lang-switch a:hover {
-  background: #ddd;
-}
- 
-.hero {
-  background: linear-gradient(180deg, #f7f9fc, #ffffff);
-  padding: 40px 20px;
-  border-radius: 8px;
-  margin-bottom: 30px;
-}
- 
-.screenshot {
-  background: #fafafa;
-  border: 1px solid #e3e3e3;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 40px 0;
-  text-align: center;
-}
-
-.screenshot img {
-  max-width: 100%;
-  border-radius: 4px;
-}
-
-.screenshot p {
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.audit-shot img {
-  width: 100%;
-  max-width: 800px;
-  max-height: 420px;
-  object-fit: contain;
-  background: #ffffff;
-  border-radius: 6px;
-  display: block;
-  margin: 0 auto;
-}
- 
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
- 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
-  margin: 0;
-  line-height: 1.6;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-img {
-  max-width: 700px;
-  display: block;
-  margin: 40px auto;
-  border-radius: 6px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
-}
+  <!-- SEO OPTIMIZED TITLE & DESCRIPTION (Targeting position #1-5 for Commercial Intent) -->
+  <title>Excel Change Tracker & Audit Log Software | 100% Local & No Cloud – ExcelAudit</title>
+  <meta name="description" content="Stop losing track of Excel changes. ExcelAudit lets you compare Excel files, detect modified cells, and generate clean audit logs locally. No macros, no cloud, 100% private.">
+  <meta property="og:title" content="ExcelAudit – Local Spreadsheet Change Detection & Comparison Tool">
+  <meta property="og:description" content="Compare Excel files and track cell modifications in seconds without cloud uploads or complex VBA macros.">
 
-h1 {
-  margin-top: 10px;
-}
+  <link rel="alternate" hreflang="en" href="https://krsoft-tools.github.io/excelaudit/index.html">
+  <link rel="alternate" hreflang="sk" href="https://krsoft-tools.github.io/excelaudit/index-sk.html">
+  <link rel="canonical" href="https://krsoft-tools.github.io/excelaudit/">
 
-h2 {
-  margin-top: 40px;
-}
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f6f8;
+      color: #222;
+      margin: 0;
+      line-height: 1.6;
+    }
 
-.button {
-  display: inline-block;
-  padding: 14px 22px;
-  margin: 10px;
-  background-color: #2e7d32;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 16px;
-  transition: all 0.2s ease;
-}
+    .container {
+      max-width: 920px;
+      margin: 30px auto;
+      padding: 35px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
 
-.button:hover {
-  background-color: #1b5e20;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-}
+    /* Top Navigation & Language Switcher */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eaeaea;
+      margin-bottom: 30px;
+    }
 
-.button:visited {
-  color: white;
-}
+    .brand-logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1b5e20;
+      text-decoration: none;
+    }
 
-.button:active {
-  background-color: #145a18;
-}
+    .nav-links a {
+      color: #555;
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: 500;
+      font-size: 14px;
+    }
 
-.feature-box {
-  background: #f7f9fc;
-  border: 1px solid #e3e3e3;
-  border-radius: 8px;
-  padding: 22px;
-  margin: 25px 0;
-}
+    .nav-links a:hover {
+      color: #1b5e20;
+    }
 
-.feature-box h3 {
-  margin-top: 0;
-}
+    .lang-switch a {
+      padding: 4px 10px;
+      margin-left: 6px;
+      border-radius: 4px;
+      background: #f0f0f0;
+      text-decoration: none;
+      font-size: 13px;
+      color: #333;
+      font-weight: 600;
+    }
 
-.feature-box a {
-  display: inline-block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #2e7d32;
-  text-decoration: none;
-}
+    .lang-switch a:hover {
+      background: #e0e0e0;
+    }
 
-.feature-box a:hover {
-  text-decoration: underline;
-}
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+      padding: 30px 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #edf2f7;
+    }
 
-.link-box {
-  margin-top: 50px;
-  padding: 20px;
-  background: #f7f9fc;
-  border-radius: 8px;
-  text-align: center;
-}
+    h1 {
+      font-size: 32px;
+      line-height: 1.25;
+      color: #111;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
 
-.text-link {
-  color: #2e7d32;
-  text-decoration: none;
-  font-weight: bold;
-}
+    .hero-subtitle {
+      font-size: 18px;
+      color: #444;
+      max-width: 700px;
+      margin: 0 auto 25px auto;
+      font-weight: 500;
+    }
 
-.text-link:hover {
-  text-decoration: underline;
-}
+    /* Badges / Value Props */
+    .value-badges {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
 
-</style>  
+    .badge {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13.5px;
+      font-weight: 600;
+      border: 1px solid #c8e6c9;
+    }
 
+    /* Download CTA Buttons */
+    .cta-box {
+      background: #ffffff;
+      border: 2px dashed #2e7d32;
+      border-radius: 10px;
+      padding: 25px;
+      margin: 25px 0 10px 0;
+    }
+
+    .cta-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #1b5e20;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      background-color: #2e7d32;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+    }
+
+    .button:hover {
+      background-color: #1b5e20;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .security-note {
+      font-size: 13px;
+      color: #666;
+      margin-top: 15px;
+    }
+
+    /* Comparison Table (Excel vs ExcelAudit) */
+    .comparison-section {
+      margin: 45px 0;
+    }
+
+    table.comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: #fff;
+    }
+
+    table.comparison-table th, table.comparison-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      font-size: 14.5px;
+    }
+
+    table.comparison-table th {
+      background: #f8f9fa;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .check { color: #2e7d32; font-weight: bold; }
+    .cross { color: #c62828; font-weight: bold; }
+
+    /* Screenshot Sections (Preserved your original images) */
+    .screenshot {
+      background: #fafafa;
+      border: 1px solid #e3e3e3;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .screenshot p {
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .audit-shot img {
+      width: 100%;
+      max-width: 800px;
+      max-height: 420px;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 6px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    /* Guide / Trojan Horse Section */
+    .guide-box {
+      background: #f8f9fa;
+      border-left: 4px solid #2e7d32;
+      padding: 22px;
+      margin: 40px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .guide-box h3 {
+      margin-top: 0;
+      color: #1b5e20;
+    }
+
+    .text-link {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .text-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer / Feedback */
+    .feedback-box {
+      margin: 50px auto 30px auto;
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #eee;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
 </head>
-  
+
 <body>
- 
-<div class="container">
 
-<div class="lang-switch">
-<a href="index.html">EN</a>
-<a href="index-sk.html">SK</a>
-</div>
- 
-<div class="hero" style="text-align:center;">
- 
-<h1>
-Changed numbers in Excel?
-See exactly what changed.
-</h1>
+  <div class="container">
 
-<p><strong>
-Track spreadsheet changes locally in seconds.
-No macros. No cloud.
-</strong></p>
- 
-<p style="font-size:18px; color:#555;">
-Compare Excel files, detect modified cells and keep a clear audit trail.
-</p>
- 
-<h2>Try it on your own Excel files</h2>
+    <!-- TOP NAVIGATION -->
+    <div class="nav-bar">
+      <a href="index.html" class="brand-logo">ExcelAudit</a>
+      <div class="nav-links">
+        <a href="how-to-track-changes-in-excel.html">Excel Guide</a>
+        <a href="excel-audit-trail.html">Audit Trail</a>
+        <a href="compare-excel-files.html">Compare Files</a>
+      </div>
+      <div class="lang-switch">
+        <a href="index.html">EN</a>
+        <a href="index-sk.html">SK</a>
+      </div>
+    </div>
 
-<p>
-Detect spreadsheet changes in seconds.
-</p>
+    <!-- HERO SECTION -->
+    <div class="hero">
+      <h1>Changed numbers in Excel?<br>See exactly what modified.</h1>
+      
+      <p class="hero-subtitle">
+        Track spreadsheet changes locally in seconds. Stop guessing who edited cell B14 or why formulas broke.
+      </p>
 
-<a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit.v1.4.4_MacOS_portable_DEMO.zip">
-MacOS demo</a>
+      <div class="value-badges">
+        <span class="badge">🔒 100% Local & Private</span>
+        <span class="badge">⚡ Portable (.zip) – No Install</span>
+        <span class="badge">🚫 Zero Cloud Uploads</span>
+        <span class="badge">⚙️ No Excel Macros Required</span>
+      </div>
 
-<a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit_1.4.4_Windows_Portable_Demo_EN.zip">
-Windows demo</a>
+      <!-- CTA DOWNLOAD BOX -->
+      <div class="cta-box">
+        <div class="cta-title">Try ExcelAudit Free on Your Own Files</div>
+        <p style="margin-bottom: 20px; font-size: 14.5px; color: #555;">
+          Download the portable demo. Unzip and run immediately.
+        </p>
 
-<p style="font-size:14px; color:#666;">
-No installation. No data leaves your device.
-</p>
- 
-</div>
-  
-<div class="feature-box">
+        <div class="button-group">
+          <a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit_1.4.4_Windows_Portable_Demo_EN.zip">
+            ⬇️ Download Portable Demo for Windows (.zip)
+          </a>
+          <a class="button" style="background-color: #444;" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit.v1.4.4_MacOS_portable_DEMO.zip">
+            🍏 macOS Demo (.zip)
+          </a>
+        </div>
 
-<h2>What ExcelAudit Helps You Do</h2>
+        <p class="security-note">
+          ✓ No administrator rights required &nbsp;|&nbsp; ✓ Your sensitive financial data never leaves your computer
+        </p>
+      </div>
+    </div>
 
-<p>
-ExcelAudit is a lightweight local tool designed for Excel change tracking, audit trail creation, and spreadsheet version comparison. It helps you see what changed, keep a clear record of modifications, and review Excel files without relying on Excel’s limited built-in history features.
-</p>
+    <!-- EXCEL VS EXCELAUDIT COMPARISON -->
+    <div class="comparison-section">
+      <h2>Why Built-in Excel History Keeps Failing You</h2>
+      <p>
+        For over 20 years, Excel users have struggled with built-in "Track Changes" features. Shared workbooks corrupt, cloud version histories get overwritten, and manual cell checks waste hours.
+      </p>
 
-</div>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature / Requirement</th>
+            <th>Native MS Excel</th>
+            <th>ExcelAudit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Audit Trail Integrity</strong></td>
+            <td class="cross">❌ Easily bypassed or cleared</td>
+            <td class="check">✔ Tamper-evident baseline audit log</td>
+          </tr>
+          <tr>
+            <td><strong>Cell-by-Cell Difference Highlight</strong></td>
+            <td class="cross">❌ Cluttered / Limited history</td>
+            <td class="check">✔ Clear visual difference report</td>
+          </tr>
+          <tr>
+            <td><strong>Local Privacy & Data Security</strong></td>
+            <td class="cross">❌ Requires cloud sync (OneDrive)</td>
+            <td class="check">✔ 100% Offline execution</td>
+          </tr>
+          <tr>
+            <td><strong>Macro Security Risks</strong></td>
+            <td class="cross">❌ VBA Macros blocked by IT</td>
+            <td class="check">✔ No macros, standalone executable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-<h2>Why Use ExcelAudit Instead of Manual Review?</h2>
+    <!-- PRESERVED SCREENSHOTS SECTION -->
+    <h2>Visual Audit Log Examples</h2>
+    <p>See how ExcelAudit tracks modifications and protects spreadsheet baseline integrity:</p>
 
-<p>
-Manually checking Excel files is slow and unreliable, especially when spreadsheets are updated repeatedly or shared between multiple people. ExcelAudit helps you identify modifications faster, reduce review effort, and keep a clearer record of spreadsheet changes.
-</p>
+    <div class="screenshot audit-shot">
+      <p>1. Baseline created after adding an Excel file</p>
+      <img src="excel-audit-baseline-created.png" alt="ExcelAudit baseline created after inserting an Excel file">
+    </div>
 
-<h2>Audit Log Example</h2>
+    <div class="screenshot audit-shot">
+      <p>2. Detected changes recorded in the audit log</p>
+      <img src="excel-audit-log-example.png" alt="Excel audit log showing detected changes between spreadsheet versions">
+    </div>
 
-<div class="screenshot audit-shot">
+    <div class="screenshot audit-shot">
+      <p>3. Audit log integrity violation detection</p>
+      <img src="excel-audit-log-integrity-violation.png" alt="ExcelAudit detecting violation of audit log integrity">
+    </div>
 
-<p>Baseline created after adding an Excel file</p>
+    <!-- TROJAN HORSE GUIDE TEASER -->
+    <div class="guide-box">
+      <h3>Need to find out who last edited an Excel file right now?</h3>
+      <p>
+        If you are trying to check spreadsheet author history using native Excel features, we wrote a complete step-by-step guide explaining what native Excel can show you and where its limitations start.
+      </p>
+      <p>
+        👉 <a href="how-to-track-changes-in-excel.html" class="text-link">Read Guide: How to Check Who Last Edited an Excel File →</a>
+      </p>
+    </div>
 
-<img src="excel-audit-baseline-created.png"
-alt="ExcelAudit baseline created after inserting an Excel file">
+    <!-- CONTACT & FEEDBACK -->
+    <div class="feedback-box">
+      <p style="font-size:18px; font-weight:600; color:#222; margin-bottom:10px;">
+        Tried the software?
+      </p>
+      <p style="font-size:15px; color:#555; margin-bottom:15px;">
+        If you used the demo or have an Excel problem you wish a simple local tool could solve, reach out directly:
+      </p>
+      <p style="font-size:17px; font-weight:bold; margin:0;">
+        <a href="mailto:krsoft.tools@gmail.com" style="color:#2e7d32; text-decoration:none;">
+          krsoft.tools@gmail.com
+        </a>
+      </p>
+    </div>
 
-</div>
+    <footer>
+      <p>© 2026 Robert Krecmer – ExcelAudit</p>
+    </footer>
 
-<div class="screenshot audit-shot">
+  </div>
 
-<p>Detected changes recorded in the audit log</p>
-
-<img src="excel-audit-log-example.png"
-alt="Excel audit log showing detected changes between spreadsheet versions">
-
-</div>
-
-<div class="screenshot audit-shot">
-
-<p>Audit log integrity violation detection</p>
-
-<img src="excel-audit-log-integrity-violation.png"
-alt="ExcelAudit detecting violation of audit log integrity">
-
-</div>
-
-<div class="link-box">
-
-<h2>Explore ExcelAudit Pages</h2>
-
-<!-- AUDIT -->
-<p style="margin-top:20px; font-weight:bold; color:#555;">
-Audit & Change Tracking
-</p>
-
-<p>
-<a href="excel-audit-trail.html" class="text-link">
-Excel Audit Trail →
-</a>
-</p>
-
-<hr style="margin:25px 0; opacity:0.2;">
-
-<!-- COMPARE -->
-<p style="margin-top:30px; font-weight:bold; color:#555;">
-File Comparison
-</p>
-
-<p>
-<a href="compare-excel-files.html" class="text-link">
-Compare Excel Files →
-</a>
-</p>
-
-</div>
- 
-<div style="margin:50px auto 30px auto; max-width:680px; text-align:center;">
-
-  <p style="font-size:20px; font-weight:600; color:#222; margin-bottom:18px;">
-    Tried the software?
-  </p>
-
-  <p style="font-size:16.5px; line-height:1.7; color:#555; margin-bottom:16px;">
-    If you used the demo and have any feedback, I’d genuinely like to hear it.
-  </p>
-
-  <p style="font-size:16.5px; line-height:1.7; color:#555; margin-bottom:20px;">
-    And if there’s another Excel-related problem you wish a simple local tool could solve, feel free to mention that too.
-  </p>
-
-  <p style="font-size:15px; color:#777; margin-bottom:6px;">
-    You can reach me at:
-  </p>
-
-  <p style="font-size:17px; margin:0;">
-    <a href="mailto:krsoft.tools@gmail.com" style="color:#333;">
-      krsoft.tools@gmail.com
-    </a>
-  </p>
-
-</div>
- 
-<hr>
-
-<p style="text-align:center; font-size:13px; color:#777;">
-© 2026 Robert Krecmer – ExcelAudit
-</p>
-
-</div>
- 
 </body>
 </html>
