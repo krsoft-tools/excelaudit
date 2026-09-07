@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- SEO OPTIMIZED TITLE & META DESCRIPTION -->
+  <title>Compare Excel Files – Fast Cell Difference Detection | ExcelAudit</title>
+  <meta name="description" content="Compare two or more Excel spreadsheet versions and immediately see which cells changed. Fast, precise, and 100% local comparison without uploading files to the cloud.">
+  <meta property="og:title" content="Compare Excel Files – Find Spreadsheet Differences in Seconds">
+  <meta property="og:description" content="No more manual line-by-line checks. Compare Excel versions locally on your computer.">
+
+  <link rel="alternate" hreflang="en" href="https://krsoft-tools.github.io/excelaudit/compare-excel-files.html">
+  <link rel="alternate" hreflang="sk" href="https://krsoft-tools.github.io/excelaudit/compare-excel-files-sk.html">
+  <link rel="canonical" href="https://krsoft-tools.github.io/excelaudit/compare-excel-files.html">
+
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f6f8;
+      color: #222;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 30px auto;
+      padding: 35px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Top Navigation & Language Switcher */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eaeaea;
+      margin-bottom: 30px;
+    }
+
+    .brand-logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1b5e20;
+      text-decoration: none;
+    }
+
+    .nav-links a {
+      color: #555;
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #1b5e20;
+    }
+
+    .lang-switch a {
+      padding: 4px 10px;
+      margin-left: 6px;
+      border-radius: 4px;
+      background: #f0f0f0;
+      text-decoration: none;
+      font-size: 13px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .lang-switch a:hover {
+      background: #e0e0e0;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+      padding: 30px 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #edf2f7;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.25;
+      color: #111;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: #444;
+      max-width: 700px;
+      margin: 0 auto 25px auto;
+      font-weight: 500;
+    }
+
+    /* Value Badges */
+    .value-badges {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .badge {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13.5px;
+      font-weight: 600;
+      border: 1px solid #c8e6c9;
+    }
+
+    /* CTA Download Box */
+    .cta-box {
+      background: #ffffff;
+      border: 2px dashed #2e7d32;
+      border-radius: 10px;
+      padding: 25px;
+      margin: 25px 0 10px 0;
+    }
+
+    .cta-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #1b5e20;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      background-color: #2e7d32;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+    }
+
+    .button:hover {
+      background-color: #1b5e20;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .security-note {
+      font-size: 13px;
+      color: #666;
+      margin-top: 15px;
+    }
+
+    /* Content Sections */
+    .content-section {
+      margin: 40px 0;
+    }
+
+    .content-section h2 {
+      color: #1b5e20;
+      font-size: 22px;
+      margin-top: 30px;
+    }
+
+    ul.feature-list {
+      padding-left: 20px;
+    }
+
+    ul.feature-list li {
+      margin-bottom: 10px;
+      font-size: 15.5px;
+    }
+
+    /* Screenshots */
+    .screenshot {
+      background: #fafafa;
+      border: 1px solid #e3e3e3;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .screenshot p {
+      font-weight: bold;
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .screenshot img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    /* Link Box */
+    .link-box {
+      margin-top: 40px;
+      padding: 25px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #eee;
+    }
+
+    .text-link {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .text-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- TOP NAVIGATION -->
+    <div class="nav-bar">
+      <a href="index.html" class="brand-logo">ExcelAudit</a>
+      <div class="nav-links">
+        <a href="index.html">Main Page</a>
+        <a href="how-to-track-changes-in-excel.html">Excel Guide</a>
+      </div>
+      <div class="lang-switch">
+        <a href="compare-excel-files.html">EN</a>
+        <a href="compare-excel-files-sk.html">SK</a>
+      </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+      <h1>Compare Excel Files and Highlight Changed Cells</h1>
+
+      <p class="hero-subtitle">
+        See differences between spreadsheet versions in seconds.
+      </p>
+
+      <div class="value-badges">
+        <span class="badge">⚡ Instant Results</span>
+        <span class="badge">🔒 100% Local Processing</span>
+        <span class="badge">🚫 Portable – No Admin Rights</span>
+      </div>
+
+      <!-- CTA DOWNLOAD BOX (WINDOWS ONLY) -->
+      <div class="cta-box">
+        <div class="cta-title">Compare Your Own Excel Files</div>
+        <p style="margin-bottom: 20px; font-size: 14.5px; color: #555;">
+          Manually comparing Excel files is slow, repetitive, and easy to get wrong. Automate your workflow.
+        </p>
+
+        <div>
+          <a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit_1.4.4_Windows_Portable_Demo_EN.zip">
+            ⬇️ Download Portable Demo for Windows (.zip)
+          </a>
+        </div>
+
+        <p class="security-note">
+          ✓ Runs locally &nbsp;|&nbsp; No installation required &nbsp;|&nbsp; ✓ No cloud (data never leaves your PC)
+        </p>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-section">
+      <h2>Why Compare Excel Files Automatically?</h2>
+      <p>
+        When spreadsheet files are updated repeatedly, it can be difficult to see what changed between versions. Small edits in values or formulas are easy to miss—especially in large workbooks, shared spreadsheets, or frequent client revisions.
+      </p>
+      <p>
+        A dedicated comparison workflow helps you review differences quickly, accurately, and without human error.
+      </p>
+
+      <h2>What You Can Compare</h2>
+      <ul class="feature-list">
+        <li><strong>Changed cell values:</strong> Exact cell-level detection of rewritten values.</li>
+        <li><strong>Differences between versions:</strong> Side-by-side comparison of separate file revisions.</li>
+        <li><strong>Updated worksheet contents:</strong> Quick overview of structural or data changes.</li>
+        <li><strong>Modified business data:</strong> Verify financial models, price lists, and reporting files.</li>
+      </ul>
+
+      <h2>When Excel File Comparison Is Most Useful</h2>
+      <ul class="feature-list">
+        <li>Checking spreadsheet versions from different dates.</li>
+        <li>Reviewing updates before final approval.</li>
+        <li>Verifying external edits from contractors, suppliers, or clients.</li>
+        <li>Finding cell differences without manual line-by-line inspection.</li>
+      </ul>
+
+      <h2>Review Spreadsheet Differences More Efficiently</h2>
+      <p>
+        Instead of manually inspecting rows and columns, focus directly on what actually changed. The tool generates a clear visual audit trail, making spreadsheet review faster, safer, and completely reliable.
+      </p>
+    </div>
+
+    <!-- SCREENSHOTS -->
+    <h2>Visual Comparison Outputs</h2>
+
+    <div class="screenshot">
+      <p>1. Excel file comparison completed successfully</p>
+      <img src="compare-done.png" alt="Excel file comparison completed successfully in version mode">
+    </div>
+
+    <div class="screenshot">
+      <p>2. Comparison results saved in a dedicated timestamped output folder</p>
+      <img src="results-in-folder.png" alt="Excel comparison results saved in a timestamped results folder">
+    </div>
+
+    <div class="screenshot">
+      <p>3. Specific comparison results highlighting modified cell values</p>
+      <img src="specific-results.png" alt="Specific Excel file comparison results showing compared spreadsheet versions">
+    </div>
+
+    <!-- RELATED LINKS -->
+    <div class="link-box">
+      <h3 style="margin-top:0; color:#1b5e20;">Related Pages</h3>
+      <p>
+        <a href="index.html" class="text-link">← ExcelAudit Main Page</a>
+      </p>
+      <p>
+        <a href="excel-audit-trail.html" class="text-link">How Immutable Audit Log Works →</a>
+      </p>
+    </div>
+
+    <footer>
+      <p>© 2026 Robert Krecmer – ExcelAudit</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
