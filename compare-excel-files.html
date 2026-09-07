@@ -1,213 +1,359 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<title>Compare Excel files and find changed cells fast</title> 
-<meta name="description" content="See exactly what changed between Excel file versions. Compare spreadsheets, detect modified cells and review differences locally in seconds.">  
-<link rel="canonical" href="https://krsoft-tools.github.io/excelaudit/compare-excel-files.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-<style>
+  <!-- SEO OPTIMIZOVANÝ TITLE A META DESCRIPTION -->
+  <title>Porovnanie Excel súborov – Rýchla detekcia zmien v bunkách | ExcelAudit</title>
+  <meta name="description" content="Porovnajte dve verzie Excel tabuľky a okamžite zistite, ktoré bunky sa zmenili. Rýchle, presné a 100 % lokálne porovnanie bez nahrávania dát na cloud.">
+  <meta property="og:title" content="Porovnanie Excel súborov – Nájdite rozdiely v tabuľkách za pár sekúnd">
+  <meta property="og:description" content="Už žiadne prácne kontrolovanie riadok po riadku. Porovnajte verzie Excelov lokálne na svojom počítači.">
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
-  margin: 0;
-  line-height: 1.6;
-}
+  <link rel="alternate" hreflang="en" href="https://krsoft-tools.github.io/excelaudit/compare-excel-files.html">
+  <link rel="alternate" hreflang="sk" href="https://krsoft-tools.github.io/excelaudit/compare-excel-files-sk.html">
+  <link rel="canonical" href="https://krsoft-tools.github.io/excelaudit/compare-excel-files-sk.html">
 
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f6f8;
+      color: #222;
+      margin: 0;
+      line-height: 1.6;
+    }
 
-.hero {
-  background: linear-gradient(180deg, #f7f9fc, #ffffff);
-  padding: 40px 20px;
-  border-radius: 8px;
-  margin-bottom: 30px;
-  text-align: center;
-}
+    .container {
+      max-width: 920px;
+      margin: 30px auto;
+      padding: 35px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
 
-.screenshot {
-  background: #fafafa;
-  border: 1px solid #e3e3e3;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 40px 0;
-  text-align: center;
-}
+    /* Horné menu a prepínač jazykov */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eaeaea;
+      margin-bottom: 30px;
+    }
 
-.screenshot img {
-  max-width: 100%;
-  border-radius: 4px;
-}
+    .brand-logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1b5e20;
+      text-decoration: none;
+    }
 
-.button {
-  display: inline-block;
-  padding: 14px 22px;
-  margin: 10px;
-  background-color: #2e7d32;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
+    .nav-links a {
+      color: #555;
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: 500;
+      font-size: 14px;
+    }
 
-.button:hover {
-  background-color: #1b5e20;
-}
+    .nav-links a:hover {
+      color: #1b5e20;
+    }
 
-.link-box {
-  margin-top: 50px;
-  padding: 20px;
-  background: #f7f9fc;
-  border-radius: 8px;
-  text-align: center;
-}
+    .lang-switch a {
+      padding: 4px 10px;
+      margin-left: 6px;
+      border-radius: 4px;
+      background: #f0f0f0;
+      text-decoration: none;
+      font-size: 13px;
+      color: #333;
+      font-weight: 600;
+    }
 
-.text-link {
-  color: #2e7d32;
-  text-decoration: none;
-  font-weight: bold;
-}
+    .lang-switch a:hover {
+      background: #e0e0e0;
+    }
 
-.text-link:hover {
-  text-decoration: underline;
-}
-  
-</style>
+    /* Hero sekcia */
+    .hero {
+      background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+      padding: 30px 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #edf2f7;
+    }
 
+    h1 {
+      font-size: 32px;
+      line-height: 1.25;
+      color: #111;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: #444;
+      max-width: 700px;
+      margin: 0 auto 25px auto;
+      font-weight: 500;
+    }
+
+    /* Štítky výhod */
+    .value-badges {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .badge {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13.5px;
+      font-weight: 600;
+      border: 1px solid #c8e6c9;
+    }
+
+    /* CTA stiahnutie */
+    .cta-box {
+      background: #ffffff;
+      border: 2px dashed #2e7d32;
+      border-radius: 10px;
+      padding: 25px;
+      margin: 25px 0 10px 0;
+    }
+
+    .cta-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #1b5e20;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      background-color: #2e7d32;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+    }
+
+    .button:hover {
+      background-color: #1b5e20;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .security-note {
+      font-size: 13px;
+      color: #666;
+      margin-top: 15px;
+    }
+
+    /* Obsahové sekcie */
+    .content-section {
+      margin: 40px 0;
+    }
+
+    .content-section h2 {
+      color: #1b5e20;
+      font-size: 22px;
+      margin-top: 30px;
+    }
+
+    ul.feature-list {
+      padding-left: 20px;
+    }
+
+    ul.feature-list li {
+      margin-bottom: 10px;
+      font-size: 15.5px;
+    }
+
+    /* Náhľady / Obrázky */
+    .screenshot {
+      background: #fafafa;
+      border: 1px solid #e3e3e3;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .screenshot p {
+      font-weight: bold;
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .screenshot img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    /* Prepojenia */
+    .link-box {
+      margin-top: 40px;
+      padding: 25px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #eee;
+    }
+
+    .text-link {
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .text-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-<div class="hero">
+    <!-- HORNÉ MENU -->
+    <div class="nav-bar">
+      <a href="index-sk.html" class="brand-logo">ExcelAudit</a>
+      <div class="nav-links">
+        <a href="index-sk.html">Hlavná stránka</a>
+        <a href="how-to-track-changes-in-excel.html">Excel Návod</a>
+        <a href="excel-audit-trail.html">Audit Log</a>
+      </div>
+      <div class="lang-switch">
+        <a href="compare-excel-files.html">EN</a>
+        <a href="compare-excel-files-sk.html">SK</a>
+      </div>
+    </div>
 
-<h1>
-Compare Excel files and highlight changed cells
-</h1>
+    <!-- HERO SEKCIA -->
+    <div class="hero">
+      <h1>Porovnajte Excel súbory a zvýraznite zmenené bunky</h1>
 
-<p><strong>
-See differences between spreadsheet versions in seconds.
-</strong></p>
-  
-<p style="font-size:18px; color:#555;">
-Manually comparing Excel files is slow, repetitive, and easy to get wrong. Automate your workflow.
-</p>
+      <p class="hero-subtitle">
+        Odhaľte rozdiely medzi verziami tabuliek za pár sekúnd.
+      </p>
 
-<h2>Try to comparison your own Excel file</h2>
+      <div class="value-badges">
+        <span class="badge">⚡ Okamžité výsledky</span>
+        <span class="badge">🔒 100 % Lokálne spracovanie</span>
+        <span class="badge">🚫 Bez inštalácie a admin práv</span>
+      </div>
 
-<a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v2.0-Excel-Compare-Tool-v2.0-DEMO/ExcelCompareTool.v2.0_DEMO.dmg">
-MacOS demo</a>
+      <!-- CTA STIAHNUTIE DEMO (LEN WINDOWS) -->
+      <div class="cta-box">
+        <div class="cta-title">Vyskúšajte porovnanie na vlastných súboroch</div>
+        <p style="margin-bottom: 20px; font-size: 14.5px; color: #555;">
+          Manuálne porovnávanie Excelov je pomalé, stereotypné a ľahko v ňom prehliadnete chybu. Zautomatizujte si to.
+        </p>
 
-<a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v2.0-Excel-Compare-Tool-v2.0-DEMO/ExcelCompareTool.v2.0_DEMO_Windows.zip">
-Windows demo</a>
+        <div>
+          <a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit_1.4.4_Windows_Portable_Demo_EN.zip">
+            ⬇️ Stiahnuť Portable Demo pre Windows (.zip)
+          </a>
+        </div>
 
-<p style="font-size:14px; color:#666;">
-Runs locally. No installation. No cloud.
-</p>
+        <p class="security-note">
+          ✓ Beží lokálne &nbsp;|&nbsp; ✓ Bez inštalácie &nbsp;|&nbsp; ✓ Žiadny cloud (dáta neopustia počítač)
+        </p>
+      </div>
+    </div>
 
-<p style="font-size:13px; color:#888;">
-No data leaves your computer.
-</p>
-  
-</div>
+    <!-- HLAVNÝ OBSAH -->
+    <div class="content-section">
+      <h2>Prečo porovnávať Excel súbory automatizovane?</h2>
+      <p>
+        Keď sa tabuľky upravujú opakovane, býva náročné zistiť, čo presne sa medzi verziami zmenilo. Drobné úpravy v číslach alebo vzorcoch je ľahké prehliadnuť – najmä pri rozsiahlych zošitoch, zdieľaných súboroch alebo častých revíziách od kolegov či klientov.
+      </p>
+      <p>
+        Špecializovaný nástroj na porovnávanie vám umožní prejsť rozdiely rýchlejšie a s nulovým rizikom ľudskej chyby.
+      </p>
 
-<h2>Why Compare Excel Files?</h2>
+      <h2>Čo všetko dokážete porovnať</h2>
+      <ul class="feature-list">
+        <li><strong>Zmenené hodnoty v bunkách:</strong> Presné určenie, ktorá hodnota sa prepísala.</li>
+        <li><strong>Rozdiely medzi verziami:</strong> Porovnanie dvoch rôznych súborov (napr. január vs. február).</li>
+        <li><strong>Upravený obsah hárkov:</strong> Rýchly prehľad o zmene štruktúry alebo údajov.</li>
+        <li><strong>Aktualizované firemné dáta:</strong> Kontrola cien, výkazov a finančných modelov.</li>
+      </ul>
 
-<p>
-When spreadsheet files are updated repeatedly, it can be difficult to see what changed between versions. Small edits can be missed easily, especially when working with large workbooks, shared files, or frequent revisions.
-</p>
+      <h2>Kedy sa porovnanie Excelov najviac hodí?</h2>
+      <ul class="feature-list">
+        <li>Pri kontrole verzovaných tabuliek z rôznych dátumov.</li>
+        <li>Pri revízii podkladov pred ich konečným schválením.</li>
+        <li>Pri overovaní externých úprav od dodávateľov alebo klientov.</li>
+        <li>Keď potrebujete nájsť rozdiely bez prácnej kontroly riadok po riadku.</li>
+      </ul>
 
-<p>
-A dedicated Excel comparison workflow helps you review differences more quickly and with less manual effort.
-</p>
+      <h2>Prezerajte rozdiely efektívnejšie</h2>
+      <p>
+        Namiesto ručného prechádzania stĺpcov sa sústreďte len na to, čo sa skutočne zmenilo. Nástroj vám vygeneruje prehľadný výkaz zmien, vďaka čomu je revízia tabuliek rýchlejšia, prehľadnejšia a bezpečnéjšia.
+      </p>
+    </div>
 
-<h2>What You Can Compare</h2>
+    <!-- NÁHĽADY / OBRÁZKY -->
+    <h2>Ukážka výstupov z porovnania</h2>
 
-<ul>
-<li>Changed cell values</li>
-<li>Differences between spreadsheet versions</li>
-<li>Updated worksheet content</li>
-<li>Modified business data across files</li>
-</ul>
+    <div class="screenshot">
+      <p>1. Úspešne dokončené porovnanie dvoch verzií</p>
+      <img src="compare-done.png" alt="Porovnanie Excel súborov úspešne dokončené">
+    </div>
 
-<h2>When Excel File Comparison Is Useful</h2>
+    <div class="screenshot">
+      <p>2. Výsledky porovnania uložené v samostatnej výstupnej zložke</p>
+      <img src="results-in-folder.png" alt="Výsledky porovnania Excelov uložené v časovo označenej zložke">
+    </div>
 
-<ul>
-<li>Comparing spreadsheet versions from different dates</li>
-<li>Reviewing updates before approval</li>
-<li>Checking external edits or submitted revisions</li>
-<li>Finding differences without manual line-by-line review</li>
-</ul>
+    <div class="screenshot">
+      <p>3. Detailný prehľad konkrétnych zmien v bunkách</p>
+      <img src="specific-results.png" alt="Konkrétne výsledky porovnania zobrazujúce zmenené verzie">
+    </div>
 
-<h2>Review Spreadsheet Differences More Efficiently</h2>
+    <!-- PREPOJENIA NA OSTATNÉ STRÁNKY -->
+    <div class="link-box">
+      <h3 style="margin-top:0; color:#1b5e20;">Súvisiace stránky</h3>
+      <p>
+        <a href="index-sk.html" class="text-link">← Hlavná stránka ExcelAudit</a>
+      </p>
+      <p>
+        <a href="excel-audit-trail.html" class="text-link">Ako funguje neprepisovateľný Audit Log →</a>
+      </p>
+    </div>
 
-<p>
-Instead of manually checking worksheets line by line, Excel file comparison helps you focus directly on the differences between versions. This makes spreadsheet review faster, clearer, and less error-prone.
-</p>
-  
-<div class="screenshot">
-  
-<p>Comparison completed successfully</p>
+    <footer>
+      <p>© 2026 Robert Krecmer – ExcelAudit</p>
+    </footer>
 
-<img src="compare-done.png"
-alt="Excel file comparison completed successfully in version mode">
-
-</div>
-
-<div class="screenshot">
-
-<p>Comparison results saved in the output folder</p>
-
-<img src="results-in-folder.png"
-alt="Excel comparison results saved in a timestamped results folder">
-
-</div>
-
-<div class="screenshot">
-
-<p>Specific comparison results between spreadsheet files</p>
-
-<img src="specific-results.png"
-alt="Specific Excel file comparison results showing compared spreadsheet versions">
-
-</div>
-
-<div class="link-box">
-
-<h2>Related Pages</h2>
-
-<p>
-<a href="index.html" class="text-link">
-Main Page →
-</a>
-</p>
-
-<p>
-<a href="excel-audit-trail.html" class="text-link">
-Excel Audit Trail →
-</a>
-</p>
-
-</div>
-
-<hr>
-
-<p style="text-align:center; font-size:13px; color:#777;">
-© 2026 Robert Krecmer – ExcelCompareTool
-</p>
-  
-</div>
+  </div>
 
 </body>
 </html>
