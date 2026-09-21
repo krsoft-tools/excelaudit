@@ -5,127 +5,247 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- SEO OPTIMIZOVANÝ TITLE A META DESCRIPTION (Pre SK vyhľadávanie) -->
-  <title>Excel Audit Software – Sledovanie zmien a porovnanie Excelov | ExcelAudit</title>
-  <meta name="description" content="Prestaňte strácať prehľad o zmenách v Exceli. ExcelAudit vám umožní porovnávať Excel súbory, detegovať upravené bunky a vytvárať auditný log lokálne. Bez makier a bez cloudu.">
-  <meta property="og:title" content="ExcelAudit – Lokálny nástroj na porovnanie a detekciu zmien v Exceli">
-  <meta property="og:description" content="Porovnávajte Excel súbory a sledujte úpravy v bunkách za pár sekúnd. Bez nahrávania na cloud a bez zložito zakázaných VBA makier.">
+  <!-- SEO OPTIMIZED TITLE & DESCRIPTION -->
+  <title>Sledovanie zmien v Exceli & Audit Log Softvér | ExcelAudit</title>
+  <meta name="description" content="Prestaňte strácať prehľad o zmenách v Exceli. ExcelAudit Vám umožní porovnávať Excel súbory, detegovať zmenené bunky a generovať auditné logy lokálne. Bez makier, bez cloudu, 100% súkromné.">
+  <meta property="og:title" content="ExcelAudit – Lokálny nástroj na detekciu zmien v Excel súboroch">
+  <meta property="og:description" content="Porovnávajte Excel súbory a sledujte úpravy buniek v priebehu sekúnd bez nahrávania na cloud alebo zložitejších VBA makier.">
 
   <link rel="alternate" hreflang="en" href="https://krsoft-tools.github.io/excelaudit/index.html">
   <link rel="alternate" hreflang="sk" href="https://krsoft-tools.github.io/excelaudit/index-sk.html">
   <link rel="canonical" href="https://krsoft-tools.github.io/excelaudit/index-sk.html">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #222;
+      background-color: #0b0f19;
+      color: #f3f4f6;
       margin: 0;
+      padding: 20px 15px;
       line-height: 1.6;
     }
 
     .container {
       max-width: 920px;
-      margin: 30px auto;
+      margin: 20px auto;
       padding: 35px;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      background: #111827;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+      border: 1px solid #1f2937;
     }
 
-    /* Horné menu a prepínač jazykov */
-    .nav-bar {
+    /* TOP NAVIGATION & BRANDING */
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-bottom: 20px;
-      border-bottom: 1px solid #eaeaea;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       margin-bottom: 30px;
+      gap: 15px;
     }
 
     .brand-logo {
-      font-size: 20px;
-      font-weight: bold;
-      color: #1b5e20;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
       text-decoration: none;
+      white-space: nowrap;
     }
 
-    .nav-links a {
-      color: #555;
-      text-decoration: none;
-      margin-left: 18px;
+    .brand-logo .brand-highlight {
+      color: #10b981;
+    }
+
+    .nav-subbrand {
+      color: #10b981;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .nav-right-controls {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* DROPDOWN MENU */
+    .dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .dropbtn {
+      background: transparent;
+      color: #94a3b8;
+      border: none;
+      font-size: 0.9rem;
       font-weight: 500;
-      font-size: 14px;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+      display: inline-flex;
+      align-items: center;
     }
 
-    .nav-links a:hover {
-      color: #1b5e20;
+    .dropbtn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Invisible bridge to maintain hover */
+    .dropdown::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      height: 10px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #1f2937;
+      min-width: 220px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      border-radius: 8px;
+      border: 1px solid #374151;
+      z-index: 1000;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .dropdown-content a {
+      color: #e5e7eb;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 14px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #374151;
+      color: #ffffff;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* LANGUAGE SWITCHER */
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
     }
 
     .lang-switch a {
       padding: 4px 10px;
-      margin-left: 6px;
-      border-radius: 4px;
-      background: #f0f0f0;
+      margin-left: 4px;
+      border-radius: 6px;
+      background: #1f2937;
+      border: 1px solid #374151;
       text-decoration: none;
-      font-size: 13px;
-      color: #333;
+      font-size: 12px;
+      color: #9ca3af;
       font-weight: 600;
+      transition: background 0.2s, color 0.2s;
     }
 
     .lang-switch a:hover {
-      background: #e0e0e0;
+      background: #374151;
+      color: #ffffff;
     }
 
-    /* Hero sekcia */
+    /* HERO SECTION */
     .hero {
-      background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
-      padding: 30px 20px;
-      border-radius: 10px;
+      background: #1f2937;
+      padding: 35px 25px;
+      border-radius: 12px;
       text-align: center;
-      border: 1px solid #edf2f7;
+      border: 1px solid #374151;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 30px;
       line-height: 1.25;
-      color: #111;
+      color: #ffffff;
       margin-top: 10px;
       margin-bottom: 15px;
+      letter-spacing: -0.5px;
     }
 
     .hero-subtitle {
-      font-size: 18px;
-      color: #444;
+      font-size: 17px;
+      color: #9ca3af;
       max-width: 700px;
       margin: 0 auto 25px auto;
-      font-weight: 500;
+      font-weight: 400;
     }
 
-    /* Štítky výhod */
+    /* BADGES */
     .value-badges {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 12px;
       flex-wrap: wrap;
       margin-bottom: 30px;
     }
 
     .badge {
-      background: #e8f5e9;
-      color: #2e7d32;
+      background: rgba(16, 185, 129, 0.1);
+      color: #34d399;
       padding: 6px 14px;
       border-radius: 20px;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 600;
-      border: 1px solid #c8e6c9;
+      border: 1px solid rgba(16, 185, 129, 0.25);
     }
 
-    /* CTA stiahnutie */
-    .cta-box {
-      background: #ffffff;
-      border: 2px dashed #2e7d32;
+    .use-cases-section {
+      text-align: left;
+      background: #111827;
+      padding: 20px 25px;
       border-radius: 10px;
+      border: 1px solid #374151;
+      margin-bottom: 25px;
+    }
+
+    .use-cases-section h2 {
+      font-size: 18px;
+      color: #ffffff;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .use-cases-section ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #d1d5db;
+    }
+
+    .use-cases-section li {
+      margin-bottom: 8px;
+    }
+
+    /* DOWNLOAD CTA BOX */
+    .cta-box {
+      background: #111827;
+      border: 2px dashed #10b981;
+      border-radius: 12px;
       padding: 25px;
       margin: 25px 0 10px 0;
     }
@@ -133,8 +253,8 @@
     .cta-title {
       font-size: 20px;
       font-weight: bold;
-      margin-bottom: 15px;
-      color: #1b5e20;
+      margin-bottom: 10px;
+      color: #10b981;
     }
 
     .button-group {
@@ -148,62 +268,73 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 24px;
-      background-color: #2e7d32;
+      padding: 14px 28px;
+      background-color: #10b981;
       color: white !important;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 15px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
     }
 
     .button:hover {
-      background-color: #1b5e20;
+      background-color: #059669;
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
     }
 
     .security-note {
       font-size: 13px;
-      color: #666;
+      color: #9ca3af;
       margin-top: 15px;
     }
 
-    /* Porovnávacia tabuľka (Excel vs ExcelAudit) */
+    /* COMPARISON TABLE */
     .comparison-section {
       margin: 45px 0;
+    }
+
+    .comparison-section h2 {
+      color: #ffffff;
+    }
+
+    .comparison-section p {
+      color: #9ca3af;
     }
 
     table.comparison-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
-      background: #fff;
+      background: #1f2937;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #374151;
     }
 
     table.comparison-table th, table.comparison-table td {
       padding: 14px 16px;
       text-align: left;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #374151;
       font-size: 14.5px;
     }
 
     table.comparison-table th {
-      background: #f8f9fa;
+      background: #111827;
       font-weight: 700;
-      color: #333;
+      color: #ffffff;
     }
 
-    .check { color: #2e7d32; font-weight: bold; }
-    .cross { color: #c62828; font-weight: bold; }
+    .check { color: #34d399; font-weight: bold; }
+    .cross { color: #f87171; font-weight: bold; }
 
-    /* Náhľady / Obrázky */
+    /* SCREENSHOT SECTIONS */
     .screenshot {
-      background: #fafafa;
-      border: 1px solid #e3e3e3;
-      border-radius: 8px;
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 10px;
       padding: 20px;
       margin: 30px 0;
       text-align: center;
@@ -212,7 +343,7 @@
     .screenshot p {
       font-weight: bold;
       font-size: 16px;
-      color: #333;
+      color: #ffffff;
       margin-bottom: 15px;
     }
 
@@ -221,29 +352,37 @@
       max-width: 800px;
       max-height: 420px;
       object-fit: contain;
-      background: #ffffff;
+      background: #111827;
       border-radius: 6px;
       display: block;
       margin: 0 auto;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+      border: 1px solid #374151;
     }
 
-    /* Návodový box */
+    /* GUIDE BOX */
     .guide-box {
-      background: #f8f9fa;
-      border-left: 4px solid #2e7d32;
+      background: #1f2937;
+      border-left: 4px solid #10b981;
       padding: 22px;
       margin: 40px 0;
-      border-radius: 0 8px 8px 0;
+      border-radius: 0 10px 10px 0;
+      border-top: 1px solid #374151;
+      border-right: 1px solid #374151;
+      border-bottom: 1px solid #374151;
     }
 
     .guide-box h3 {
       margin-top: 0;
-      color: #1b5e20;
+      color: #ffffff;
+    }
+
+    .guide-box p {
+      color: #9ca3af;
     }
 
     .text-link {
-      color: #2e7d32;
+      color: #34d399;
       text-decoration: none;
       font-weight: bold;
     }
@@ -252,19 +391,41 @@
       text-decoration: underline;
     }
 
-    /* Pätička / Kontaktný box */
+    /* FOOTER & FEEDBACK */
     .feedback-box {
       margin: 50px auto 30px auto;
       text-align: center;
       padding-top: 30px;
-      border-top: 1px solid #eee;
+      border-top: 1px solid #1f2937;
     }
 
     footer {
       text-align: center;
       font-size: 13px;
-      color: #777;
+      color: #6b7280;
       margin-top: 40px;
+    }
+
+    /* MOBILE RESPONSIVENESS */
+    @media (max-width: 640px) {
+      body {
+        padding: 10px;
+      }
+      .container {
+        padding: 20px 15px;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-right-controls {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .dropdown-content {
+        left: 0;
+        right: auto;
+      }
     }
   </style>
 </head>
@@ -273,141 +434,162 @@
 
   <div class="container">
 
-    <!-- HORNÉ MENU -->
-    <div class="nav-bar">
-      <a href="index-sk.html" class="brand-logo">ExcelAudit</a>
-      <div class="nav-links">
-        <a href="how-to-track-changes-in-excel.html">Excel Návod</a>
-        <a href="compare-excel-files.html">Porovnať súbory</a>
-        <a href="https://fa-scraper.vercel.app/" target="_blank" rel="noopener noreferrer">Výťah údajov z faktúr</a>
-      </div>
-      <div class="lang-switch">
-        <a href="index.html">EN</a>
-        <a href="index-sk.html">SK</a>
-      </div>
-    </div>
+    <!-- TOP NAVIGATION -->
+    <nav>
+      <a href="index-sk.html" class="brand-logo">
+        <span style="background: #10b981; color: #fff; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 1rem; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);">📊</span>
+        <span>KRSoft<span class="brand-highlight">-Tools</span></span>
+        <span class="nav-subbrand">: ExcelAudit</span>
+      </a>
 
-    <!-- HERO SEKCIA -->
+      <div class="nav-right-controls">
+        <div class="dropdown">
+          <button class="dropbtn">Ďalšie nástroje ▾</button>
+          <div class="dropdown-content">
+            <a href="https://fa-scraper.vercel.app/" target="_blank" rel="noopener noreferrer">AI Extrahovač faktúr</a>
+            <a href="https://krsoft-tools.github.io/excelaudit/compare-excel-files.html" target="_blank" rel="noopener noreferrer">Excel porovnávací nástroj</a>
+            <a href="https://krsoft-tools.github.io/legacy-systems-efaktura-bridge/index.html" target="_blank" rel="noopener noreferrer">E-Faktúra premostnie</a>
+          </div>
+        </div>
+
+        <div class="lang-switch">
+          <a href="index.html">EN</a>
+          <a href="index-sk.html">SK</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
     <div class="hero">
-      <h1>Zmenili sa čísla v Exceli?<br>Zistite presne, čo sa upravilo.</h1>
-      
+      <h1>Zmenené čísla v Exceli? Zistite, kto? kedy? z akej hodnoty? na akú hodnotu? upravil váš tabuľkový zošit.</h1>
       <p class="hero-subtitle">
-        Sledujte zmeny v tabuľkách lokálne a za pár sekúnd. Prestaňte hádať, kto prepísal bunku B14 alebo prečo sa rozpadli vzorce.
+        Sledujte zmeny v tabuľkách, generujte nezmanipulovateľné auditné logy a detegujte úpravy buniek lokálne v priebehu sekúnd.
       </p>
 
       <div class="value-badges">
-        <span class="badge">🔒 100 % Lokálne a privátne</span>
-        <span class="badge">⚡ Portabilné (.zip) – Bez inštalácie</span>
-        <span class="badge">🚫 Žiadny Cloud / Žiadne nahrávanie</span>
-        <span class="badge">⚙️ Bez nutnosti VBA makier</span>
+        <span class="badge">🔒 100% Lokálne a Súkromné</span>
+        <span class="badge">⚡ Portovateľné (.zip) – Bez inštalácie</span>
+        <span class="badge">🚫 Žiadne nahrávanie na Cloud</span>
+        <span class="badge">⚙️ Nevyžadujú sa žiadne makrá v Exceli</span>
       </div>
 
-      <!-- CTA STIAHNUTIE DEMO -->
+      <!-- Use Cases -->
+      <div class="use-cases-section">
+        <h2>Čo môžete s ExcelAudit robiť:</h2>
+        <ul>
+          <li><strong>Sledovanie úprav buniek:</strong> Automaticky detegujte, kto upravil súbor Excel a aké hodnoty boli zmenené.</li>
+          <li><strong>Auditná stopa v tabuľkách:</strong> Udržiavajte kompletný a chránený auditný log pre účely auditu a účtovníctva.</li>
+          <li><strong>Porovnávanie Excel súborov:</strong> Zvýraznite rozdiely po bunkách medzi dvoma verziami tabuľky bez použitia makier.</li>
+          <li><strong>História zmien Excelu:</strong> Majte prehľadný log zmien bez spoliehania sa na nestabilnú históriu verzií na OneDrive.</li>
+        </ul>
+      </div>
+      
+      <!-- CTA DOWNLOAD BOX -->
       <div class="cta-box">
         <div class="cta-title">Vyskúšajte ExcelAudit zadarmo na vlastných súboroch</div>
-        <p style="margin-bottom: 20px; font-size: 14.5px; color: #555;">
-          Stiahnite si portabilné demo. Stačí rozbaliť zip a okamžite spustiť.
+        <p style="margin-bottom: 20px; font-size: 14.5px; color: #9ca3af;">
+          Stiahnite si prenosné demo. Rozbaľte súbor zip a okamžite spustite.
         </p>
 
         <div class="button-group">
           <a class="button" href="https://github.com/krsoft-tools/excelaudit/releases/download/v1.4.4-demo/ExcelAudit_1.4.4_Windows_Portable_Demo_EN.zip">
-            ⬇️ Stiahnuť Portable Demo pre Windows (.zip)
+            ⬇️ Stiahnuť prenosné Demo pre Windows (.zip)
           </a>
         </div>
 
         <p class="security-note">
-          ✓ Nevyžaduje správcovské (admin) práva &nbsp;|&nbsp; ✓ Citlivé finančné dáta nikdy neopustia váš počítač
+          ✓ Nevyžadujú sa žiadne práva správcu (admin) &nbsp;|&nbsp; ✓ Vaše citlivé finančné dáta nikdy neopustia váš počítač
         </p>
       </div>
     </div>
 
-    <!-- POROVNANIE EXCEL VS EXCELAUDIT -->
+    <!-- EXCEL VS EXCELAUDIT COMPARISON -->
     <div class="comparison-section">
-      <h2>Prečo zabudovaná história v Exceli nestačí</h2>
+      <h2>Prečo vás vstavaná história Excelu neustále sklame.</h2>
       <p>
-        Používatelia Excelu bojujú s funkciou „Sledovanie zmien“ už vyše 20 rokov. Zdieľané zošity sa kazia, história verzií v cloude sa prepisuje a manuálna kontrola buniek trvá celé hodiny.
+        Už viac ako 20 rokov zápasia používatelia Excelu so vstavanou funkciou „Sledovanie zmien“. Zdieľané zošity sa poškodzujú, história verzií v cloude sa prepisuje a ručná kontrola buniek zaberá hodiny.
       </p>
 
       <table class="comparison-table">
         <thead>
           <tr>
             <th>Funkcia / Požiadavka</th>
-            <th>Bežný MS Excel</th>
+            <th>Vstavaný MS Excel</th>
             <th>ExcelAudit</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Integrita auditného logu</strong></td>
+            <td><strong>Integrita auditnej stopy</strong></td>
             <td class="cross">❌ Dá sa ľahko obísť alebo vymazať</td>
-            <td class="check">✔ Neodstrániteľný základný audit log</td>
+            <td class="check">✔ Chránený základný auditný log</td>
           </tr>
           <tr>
-            <td><strong>Zvýraznenie rozdielov po bunkách</strong></td>
-            <td class="cross">❌ Neprehľadná / Obmedzená história</td>
-            <td class="check">✔ Prehľadný vizuálny výkaz zmien</td>
+            <td><strong>Zvýraznenie rozdielov bunku po bunke</strong></td>
+            <td class="cross">❌ Neprehľadná / obmedzená história</td>
+            <td class="check">✔ Prehľadný vizuálny výkaz rozdielov</td>
           </tr>
           <tr>
             <td><strong>Súkromie a bezpečnosť dát</strong></td>
-            <td class="cross">❌ Vyžaduje cloudovú synchronizáciu (OneDrive)</td>
-            <td class="check">✔ 100 % offline spracovanie</td>
+            <td class="cross">❌ Vyžaduje synchronizáciu s cloudom (OneDrive)</td>
+            <td class="check">✔ 100% Offline spracovanie</td>
           </tr>
           <tr>
-            <td><strong>Riziko zakázaných makier</strong></td>
-            <td class="cross">❌ VBA makrá často blokuje IT bezpečnosť</td>
-            <td class="check">✔ Bez makier, samostatná aplikácia</td>
+            <td><strong>Bezpečnostné riziká makier</strong></td>
+            <td class="cross">❌ VBA makrá sú často blokované IT</td>
+            <td class="check">✔ Bez makier, samostatný spoušťateľný program</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- OBRÁZKY / PRÍKLADY AUDIT LOGU -->
-    <h2>Príklady vizuálneho auditného logu</h2>
-    <p>Pozrite sa, ako ExcelAudit zaznamenáva úpravy a chráni integritu pôvodného stavu súboru:</p>
+    <!-- PRESERVED SCREENSHOTS SECTION -->
+    <h2 style="color: #ffffff;">Príklady vizuálneho auditného logu</h2>
+    <p style="color: #9ca3af;">Pozrite sa, ako ExcelAudit sleduje úpravy a chráni integritu základných údajov:</p>
 
     <div class="screenshot audit-shot">
-      <p>1. Vytvorenie základnej verzie (baseline) po vložení Excel súboru</p>
-      <img src="excel-audit-baseline-created.png" alt="ExcelAudit vytvorenie základnej verzie po vložení Excel súboru">
+      <p>1. Vytvorenie základnej línie (baseline) po pridaní Excel súboru</p>
+      <img src="excel-audit-baseline-created.png" alt="Vytvorenie základnej línie v aplikácii ExcelAudit po vložení Excel súboru">
     </div>
 
     <div class="screenshot audit-shot">
-      <p>2. Zistené zmeny zaznamenané v auditnom logu</p>
-      <img src="excel-audit-log-example.png" alt="Excel audit log zobrazujúci zistené zmeny medzi verziami tabuľky">
+      <p>2. Zaznamenané zistené zmeny v auditnom logu</p>
+      <img src="excel-audit-log-example.png" alt="Auditný log Excelu zobrazujúci zistené zmeny medzi verziami tabuľky">
     </div>
 
     <div class="screenshot audit-shot">
       <p>3. Detekcia porušenia integrity auditného logu</p>
-      <img src="excel-audit-log-integrity-violation.png" alt="ExcelAudit detegujúci narušenie integrity auditného logu">
+      <img src="excel-audit-log-integrity-violation.png" alt="ExcelAudit detegujúci porušenie integrity auditného logu">
     </div>
 
-    <!-- ODKAZ NA NÁVOD -->
+    <!-- TROJAN HORSE GUIDE TEASER -->
     <div class="guide-box">
-      <h3>Potrebujete hneď zistiť, kto naposledy upravoval Excel súbor?</h3>
+      <h3>Potrebujete zistiť, kto naposledy upravoval Excel súbor práve teraz?</h3>
       <p>
-        Ak sa snažíte overiť históriu autorov pomocou vstavaných funkcií v Exceli, pripravili ste pre vás stručný návod. Vysvetľuje, čo všetko vám klasický Excel dokáže ukázať a kde začínajú jeho limity.
+        Ak sa snažíte skontrolovať históriu autorov tabuľky pomocou vstavaných funkcií Excelu, napísali sme podrobného sprievodcu krok za krokom, ktorý vysvetľuje, čo všetko vám klasický Excel ukáže a kde sú jeho limity.
       </p>
-      <p>
+      <p style="margin-bottom: 0;">
         👉 <a href="how-to-track-changes-in-excel.html" class="text-link">Prečítať návod: Ako zistiť, kto naposledy upravoval Excel súbor →</a>
       </p>
     </div>
 
-    <!-- KONTAKT A FEEDBACK -->
+    <!-- CONTACT & FEEDBACK -->
     <div class="feedback-box">
-      <p style="font-size:18px; font-weight:600; color:#222; margin-bottom:10px;">
-        Vyskúšali ste aplikáciu?
+      <p style="font-size:18px; font-weight:600; color:#ffffff; margin-bottom:10px;">
+        Vyskúšali ste softvér?
       </p>
-      <p style="font-size:15px; color:#555; margin-bottom:15px;">
-        Ak ste použili demo verziu alebo máte iný problém s Excelom, ktorý by dokázal vyriešiť jednoduchý lokálny nástroj, napíšte mi:
+      <p style="font-size:15px; color:#9ca3af; margin-bottom:15px;">
+        Ak ste použili demo verziu alebo máte problém s Excelom, ktorý by mal vyriešiť jednoduchý lokálny nástroj, napíšte nám priamo:
       </p>
       <p style="font-size:17px; font-weight:bold; margin:0;">
-        <a href="mailto:krsoft.tools@gmail.com" style="color:#2e7d32; text-decoration:none;">
+        <a href="mailto:krsoft.tools@gmail.com" style="color:#10b981; text-decoration:none;">
           krsoft.tools@gmail.com
         </a>
       </p>
     </div>
 
     <footer>
-      <p>© 2026 Robert Krecmer – ExcelAudit</p>
+      <p>© 2026 Róbert Krečmer – ExcelAudit</p>
     </footer>
 
   </div>
