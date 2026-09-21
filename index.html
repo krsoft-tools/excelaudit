@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- SEO OPTIMIZED TITLE & DESCRIPTION (Targeting position #1-5 for Commercial Intent) -->
+  <!-- SEO OPTIMIZED TITLE & DESCRIPTION -->
   <title>Excel Change Tracker & Audit Log Software | ExcelAudit</title>
   <meta name="description" content="Stop losing track of Excel changes. ExcelAudit lets you compare Excel files, detect modified cells, and generate clean audit logs locally. No macros, no cloud, 100% private.">
   <meta property="og:title" content="ExcelAudit – Local Spreadsheet Change Detection & Comparison Tool">
@@ -16,6 +16,10 @@
   <link rel="canonical" href="https://krsoft-tools.github.io/excelaudit/">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: #f4f6f8;
@@ -33,7 +37,7 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     }
 
-    /* Top Navigation & Language Switcher */
+    /* TOP NAVIGATION & BRANDING */
     .nav-bar {
       display: flex;
       justify-content: space-between;
@@ -41,43 +45,129 @@
       padding-bottom: 20px;
       border-bottom: 1px solid #eaeaea;
       margin-bottom: 30px;
+      gap: 15px;
     }
 
     .brand-logo {
-      font-size: 20px;
-      font-weight: bold;
-      color: #1b5e20;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #111111;
       text-decoration: none;
+      white-space: nowrap;
     }
 
-    .nav-links a {
-      color: #555;
-      text-decoration: none;
-      margin-left: 18px;
-      font-weight: 500;
+    .brand-logo .brand-highlight {
+      color: #2e7d32;
+    }
+
+    .nav-subbrand {
+      color: #2e7d32;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .nav-right-controls {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* DROPDOWN MENU */
+    .dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .dropbtn {
+      background: transparent;
+      color: #555555;
+      border: none;
       font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+      display: inline-flex;
+      align-items: center;
     }
 
-    .nav-links a:hover {
+    .dropbtn:hover {
       color: #1b5e20;
+      background: #f0f0f0;
+    }
+
+    /* Invisible bridge to maintain hover when moving cursor to menu */
+    .dropdown::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      height: 10px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #ffffff;
+      min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      z-index: 1000;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .dropdown-content a {
+      color: #333333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f4f6f8;
+      color: #2e7d32;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* LANGUAGE SWITCHER */
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
     }
 
     .lang-switch a {
       padding: 4px 10px;
-      margin-left: 6px;
+      margin-left: 4px;
       border-radius: 4px;
       background: #f0f0f0;
       text-decoration: none;
       font-size: 13px;
       color: #333;
       font-weight: 600;
+      transition: background 0.2s;
     }
 
     .lang-switch a:hover {
       background: #e0e0e0;
     }
 
-    /* Hero Section */
+    /* HERO SECTION */
     .hero {
       background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
       padding: 30px 20px;
@@ -102,7 +192,7 @@
       font-weight: 500;
     }
 
-    /* Badges / Value Props */
+    /* BADGES */
     .value-badges {
       display: flex;
       justify-content: center;
@@ -121,7 +211,7 @@
       border: 1px solid #c8e6c9;
     }
 
-    /* Download CTA Buttons */
+    /* DOWNLOAD CTA BOX */
     .cta-box {
       background: #ffffff;
       border: 2px dashed #2e7d32;
@@ -171,7 +261,7 @@
       margin-top: 15px;
     }
 
-    /* Comparison Table (Excel vs ExcelAudit) */
+    /* COMPARISON TABLE */
     .comparison-section {
       margin: 45px 0;
     }
@@ -199,7 +289,7 @@
     .check { color: #2e7d32; font-weight: bold; }
     .cross { color: #c62828; font-weight: bold; }
 
-    /* Screenshot Sections (Preserved your original images) */
+    /* SCREENSHOT SECTIONS */
     .screenshot {
       background: #fafafa;
       border: 1px solid #e3e3e3;
@@ -228,7 +318,7 @@
       box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     }
 
-    /* Guide / Trojan Horse Section */
+    /* GUIDE BOX */
     .guide-box {
       background: #f8f9fa;
       border-left: 4px solid #2e7d32;
@@ -252,7 +342,7 @@
       text-decoration: underline;
     }
 
-    /* Footer / Feedback */
+    /* FOOTER & FEEDBACK */
     .feedback-box {
       margin: 50px auto 30px auto;
       text-align: center;
@@ -266,6 +356,25 @@
       color: #777;
       margin-top: 40px;
     }
+
+    /* MOBILE RESPONSIVENESS */
+    @media (max-width: 640px) {
+      .container {
+        padding: 20px 15px;
+      }
+      .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-right-controls {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .dropdown-content {
+        left: 0;
+        right: auto;
+      }
+    }
   </style>
 </head>
 
@@ -275,14 +384,26 @@
 
     <!-- TOP NAVIGATION -->
     <div class="nav-bar">
-      <a href="index.html" class="brand-logo">ExcelAudit</a>
-      <div class="nav-links">
-        <a href="compare-excel-files.html">Compare Files</a>
-        <a href="https://fa-scraper.vercel.app/" target="_blank" rel="noopener noreferrer">Invoice data extraction</a>
-      </div>
-      <div class="lang-switch">
-        <a href="index.html">EN</a>
-        <a href="index-sk.html">SK</a>
+      <a href="index.html" class="brand-logo">
+        <span style="background: #2e7d32; color: #fff; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 0.9rem;">📊</span>
+        <span>KRSoft<span class="brand-highlight">-Tools</span></span>
+        <span class="nav-subbrand">: ExcelAudit</span>
+      </a>
+
+      <div class="nav-right-controls">
+        <div class="dropdown">
+          <button class="dropbtn">Ďalšie nástroje ▾</button>
+          <div class="dropdown-content">
+            <a href="https://fa-scraper.vercel.app/" target="_blank" rel="noopener noreferrer">AI Invoice Extractor</a>
+            <a href="https://krsoft-tools.github.io/excelaudit/compare-excel-files.html" target="_blank" rel="noopener noreferrer">Excel Compare Tool</a>
+            <a href="https://krsoft-tools.github.io/legacy-systems-efaktura-bridge/index.html" target="_blank" rel="noopener noreferrer">E-Faktúra Bridge</a>
+          </div>
+        </div>
+
+        <div class="lang-switch">
+          <a href="index.html">EN</a>
+          <a href="index-sk.html">SK</a>
+        </div>
       </div>
     </div>
 
@@ -416,7 +537,7 @@
     </div>
 
     <footer>
-      <p>© 2026 Robert Krecmer – ExcelAudit</p>
+      <p>© 2026 Róbert Krečmer – ExcelAudit</p>
     </footer>
 
   </div>
