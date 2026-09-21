@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 
 <head>
   <meta charset="UTF-8">
@@ -22,28 +22,30 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #222;
+      background-color: #0b0f19;
+      color: #f3f4f6;
       margin: 0;
+      padding: 20px 15px;
       line-height: 1.6;
     }
 
     .container {
       max-width: 920px;
-      margin: 30px auto;
+      margin: 20px auto;
       padding: 35px;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      background: #111827;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+      border: 1px solid #1f2937;
     }
 
     /* TOP NAVIGATION & BRANDING */
-    .nav-bar {
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-bottom: 20px;
-      border-bottom: 1px solid #eaeaea;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       margin-bottom: 30px;
       gap: 15px;
     }
@@ -52,19 +54,19 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 18px;
+      font-size: 1.1rem;
       font-weight: 700;
-      color: #111111;
+      color: #ffffff;
       text-decoration: none;
       white-space: nowrap;
     }
 
     .brand-logo .brand-highlight {
-      color: #2e7d32;
+      color: #10b981;
     }
 
     .nav-subbrand {
-      color: #2e7d32;
+      color: #10b981;
       font-weight: 600;
       font-size: 1.05rem;
     }
@@ -72,7 +74,7 @@
     .nav-right-controls {
       display: inline-flex;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
     }
 
     /* DROPDOWN MENU */
@@ -84,24 +86,24 @@
 
     .dropbtn {
       background: transparent;
-      color: #555555;
+      color: #94a3b8;
       border: none;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 0.9rem;
+      font-weight: 500;
       cursor: pointer;
-      padding: 6px 10px;
-      border-radius: 4px;
+      padding: 6px 12px;
+      border-radius: 6px;
       transition: color 0.2s, background 0.2s;
       display: inline-flex;
       align-items: center;
     }
 
     .dropbtn:hover {
-      color: #1b5e20;
-      background: #f0f0f0;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
     }
 
-    /* Invisible bridge to maintain hover when moving cursor to menu */
+    /* Invisible bridge to maintain hover */
     .dropdown::after {
       content: "";
       position: absolute;
@@ -116,29 +118,28 @@
       position: absolute;
       right: 0;
       top: 100%;
-      background-color: #ffffff;
+      background-color: #1f2937;
       min-width: 220px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
       border-radius: 8px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #374151;
       z-index: 1000;
       overflow: hidden;
-      margin-top: 4px;
+      margin-top: 6px;
     }
 
     .dropdown-content a {
-      color: #333333;
-      padding: 10px 16px;
+      color: #e5e7eb;
+      padding: 12px 16px;
       text-decoration: none;
       display: block;
-      font-size: 13.5px;
-      font-weight: 500;
+      font-size: 14px;
       transition: background 0.2s, color 0.2s;
     }
 
     .dropdown-content a:hover {
-      background-color: #f4f6f8;
-      color: #2e7d32;
+      background-color: #374151;
+      color: #ffffff;
     }
 
     .dropdown:hover .dropdown-content {
@@ -154,68 +155,97 @@
     .lang-switch a {
       padding: 4px 10px;
       margin-left: 4px;
-      border-radius: 4px;
-      background: #f0f0f0;
+      border-radius: 6px;
+      background: #1f2937;
+      border: 1px solid #374151;
       text-decoration: none;
-      font-size: 13px;
-      color: #333;
+      font-size: 12px;
+      color: #9ca3af;
       font-weight: 600;
-      transition: background 0.2s;
+      transition: background 0.2s, color 0.2s;
     }
 
     .lang-switch a:hover {
-      background: #e0e0e0;
+      background: #374151;
+      color: #ffffff;
     }
 
     /* HERO SECTION */
     .hero {
-      background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
-      padding: 30px 20px;
-      border-radius: 10px;
+      background: #1f2937;
+      padding: 35px 25px;
+      border-radius: 12px;
       text-align: center;
-      border: 1px solid #edf2f7;
+      border: 1px solid #374151;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 30px;
       line-height: 1.25;
-      color: #111;
+      color: #ffffff;
       margin-top: 10px;
       margin-bottom: 15px;
+      letter-spacing: -0.5px;
     }
 
     .hero-subtitle {
-      font-size: 18px;
-      color: #444;
+      font-size: 17px;
+      color: #9ca3af;
       max-width: 700px;
       margin: 0 auto 25px auto;
-      font-weight: 500;
+      font-weight: 400;
     }
 
     /* BADGES */
     .value-badges {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 12px;
       flex-wrap: wrap;
       margin-bottom: 30px;
     }
 
     .badge {
-      background: #e8f5e9;
-      color: #2e7d32;
+      background: rgba(16, 185, 129, 0.1);
+      color: #34d399;
       padding: 6px 14px;
       border-radius: 20px;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 600;
-      border: 1px solid #c8e6c9;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .use-cases-section {
+      text-align: left;
+      background: #111827;
+      padding: 20px 25px;
+      border-radius: 10px;
+      border: 1px solid #374151;
+      margin-bottom: 25px;
+    }
+
+    .use-cases-section h2 {
+      font-size: 18px;
+      color: #ffffff;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .use-cases-section ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #d1d5db;
+    }
+
+    .use-cases-section li {
+      margin-bottom: 8px;
     }
 
     /* DOWNLOAD CTA BOX */
     .cta-box {
-      background: #ffffff;
-      border: 2px dashed #2e7d32;
-      border-radius: 10px;
+      background: #111827;
+      border: 2px dashed #10b981;
+      border-radius: 12px;
       padding: 25px;
       margin: 25px 0 10px 0;
     }
@@ -223,8 +253,8 @@
     .cta-title {
       font-size: 20px;
       font-weight: bold;
-      margin-bottom: 15px;
-      color: #1b5e20;
+      margin-bottom: 10px;
+      color: #10b981;
     }
 
     .button-group {
@@ -238,26 +268,26 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 24px;
-      background-color: #2e7d32;
+      padding: 14px 28px;
+      background-color: #10b981;
       color: white !important;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 15px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
       transition: all 0.2s ease;
-      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
     }
 
     .button:hover {
-      background-color: #1b5e20;
+      background-color: #059669;
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
     }
 
     .security-note {
       font-size: 13px;
-      color: #666;
+      color: #9ca3af;
       margin-top: 15px;
     }
 
@@ -266,34 +296,45 @@
       margin: 45px 0;
     }
 
+    .comparison-section h2 {
+      color: #ffffff;
+    }
+
+    .comparison-section p {
+      color: #9ca3af;
+    }
+
     table.comparison-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
-      background: #fff;
+      background: #1f2937;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #374151;
     }
 
     table.comparison-table th, table.comparison-table td {
       padding: 14px 16px;
       text-align: left;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #374151;
       font-size: 14.5px;
     }
 
     table.comparison-table th {
-      background: #f8f9fa;
+      background: #111827;
       font-weight: 700;
-      color: #333;
+      color: #ffffff;
     }
 
-    .check { color: #2e7d32; font-weight: bold; }
-    .cross { color: #c62828; font-weight: bold; }
+    .check { color: #34d399; font-weight: bold; }
+    .cross { color: #f87171; font-weight: bold; }
 
     /* SCREENSHOT SECTIONS */
     .screenshot {
-      background: #fafafa;
-      border: 1px solid #e3e3e3;
-      border-radius: 8px;
+      background: #1f2937;
+      border: 1px solid #374151;
+      border-radius: 10px;
       padding: 20px;
       margin: 30px 0;
       text-align: center;
@@ -302,7 +343,7 @@
     .screenshot p {
       font-weight: bold;
       font-size: 16px;
-      color: #333;
+      color: #ffffff;
       margin-bottom: 15px;
     }
 
@@ -311,29 +352,37 @@
       max-width: 800px;
       max-height: 420px;
       object-fit: contain;
-      background: #ffffff;
+      background: #111827;
       border-radius: 6px;
       display: block;
       margin: 0 auto;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+      border: 1px solid #374151;
     }
 
     /* GUIDE BOX */
     .guide-box {
-      background: #f8f9fa;
-      border-left: 4px solid #2e7d32;
+      background: #1f2937;
+      border-left: 4px solid #10b981;
       padding: 22px;
       margin: 40px 0;
-      border-radius: 0 8px 8px 0;
+      border-radius: 0 10px 10px 0;
+      border-top: 1px solid #374151;
+      border-right: 1px solid #374151;
+      border-bottom: 1px solid #374151;
     }
 
     .guide-box h3 {
       margin-top: 0;
-      color: #1b5e20;
+      color: #ffffff;
+    }
+
+    .guide-box p {
+      color: #9ca3af;
     }
 
     .text-link {
-      color: #2e7d32;
+      color: #34d399;
       text-decoration: none;
       font-weight: bold;
     }
@@ -347,22 +396,25 @@
       margin: 50px auto 30px auto;
       text-align: center;
       padding-top: 30px;
-      border-top: 1px solid #eee;
+      border-top: 1px solid #1f2937;
     }
 
     footer {
       text-align: center;
       font-size: 13px;
-      color: #777;
+      color: #6b7280;
       margin-top: 40px;
     }
 
     /* MOBILE RESPONSIVENESS */
     @media (max-width: 640px) {
+      body {
+        padding: 10px;
+      }
       .container {
         padding: 20px 15px;
       }
-      .nav-bar {
+      nav {
         flex-direction: column;
         align-items: flex-start;
       }
@@ -383,9 +435,9 @@
   <div class="container">
 
     <!-- TOP NAVIGATION -->
-    <div class="nav-bar">
+    <nav>
       <a href="index.html" class="brand-logo">
-        <span style="background: #2e7d32; color: #fff; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 0.9rem;">📊</span>
+        <span style="background: #10b981; color: #fff; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 1rem; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);">📊</span>
         <span>KRSoft<span class="brand-highlight">-Tools</span></span>
         <span class="nav-subbrand">: ExcelAudit</span>
       </a>
@@ -396,7 +448,7 @@
           <div class="dropdown-content">
             <a href="https://fa-scraper.vercel.app/" target="_blank" rel="noopener noreferrer">AI Invoice Extractor</a>
             <a href="https://krsoft-tools.github.io/excelaudit/compare-excel-files.html" target="_blank" rel="noopener noreferrer">Excel Compare Tool</a>
-            <a href="https://krsoft-tools.github.io/legacy-systems-efaktura-bridge/index.html" target="_blank" rel="noopener noreferrer">E-Faktúra Bridge</a>
+            <a href="https://krsoft-tools.github.io/legacy-systems-efaktura-bridge/index.html" target="_blank" rel="noopener noreferrer">E-Invoice Bridge</a>
           </div>
         </div>
 
@@ -405,7 +457,7 @@
           <a href="index-sk.html">SK</a>
         </div>
       </div>
-    </div>
+    </nav>
 
     <!-- HERO SECTION -->
     <div class="hero">
@@ -435,7 +487,7 @@
       <!-- CTA DOWNLOAD BOX -->
       <div class="cta-box">
         <div class="cta-title">Try ExcelAudit Free on Your Own Files</div>
-        <p style="margin-bottom: 20px; font-size: 14.5px; color: #555;">
+        <p style="margin-bottom: 20px; font-size: 14.5px; color: #9ca3af;">
           Download the portable demo. Unzip and run immediately.
         </p>
 
@@ -492,8 +544,8 @@
     </div>
 
     <!-- PRESERVED SCREENSHOTS SECTION -->
-    <h2>Visual Audit Log Examples</h2>
-    <p>See how ExcelAudit tracks modifications and protects spreadsheet baseline integrity:</p>
+    <h2 style="color: #ffffff;">Visual Audit Log Examples</h2>
+    <p style="color: #9ca3af;">See how ExcelAudit tracks modifications and protects spreadsheet baseline integrity:</p>
 
     <div class="screenshot audit-shot">
       <p>1. Baseline created after adding an Excel file</p>
@@ -516,21 +568,21 @@
       <p>
         If you are trying to check spreadsheet author history using native Excel features, we wrote a complete step-by-step guide explaining what native Excel can show you and where its limitations start.
       </p>
-      <p>
+      <p style="margin-bottom: 0;">
         👉 <a href="how-to-track-changes-in-excel.html" class="text-link">Read Guide: How to Check Who Last Edited an Excel File →</a>
       </p>
     </div>
 
     <!-- CONTACT & FEEDBACK -->
     <div class="feedback-box">
-      <p style="font-size:18px; font-weight:600; color:#222; margin-bottom:10px;">
+      <p style="font-size:18px; font-weight:600; color:#ffffff; margin-bottom:10px;">
         Tried the software?
       </p>
-      <p style="font-size:15px; color:#555; margin-bottom:15px;">
+      <p style="font-size:15px; color:#9ca3af; margin-bottom:15px;">
         If you used the demo or have an Excel problem you wish a simple local tool could solve, reach out directly:
       </p>
       <p style="font-size:17px; font-weight:bold; margin:0;">
-        <a href="mailto:krsoft.tools@gmail.com" style="color:#2e7d32; text-decoration:none;">
+        <a href="mailto:krsoft.tools@gmail.com" style="color:#10b981; text-decoration:none;">
           krsoft.tools@gmail.com
         </a>
       </p>
